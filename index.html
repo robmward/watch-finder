@@ -184,7 +184,7 @@ button{font:inherit; color:inherit;}
 /* ---------- option plates ---------- */
 .opts{
   display:grid; gap:14px;
-  grid-template-columns:repeat(auto-fill, minmax(188px,1fr));
+  grid-template-columns:repeat(auto-fill, minmax(258px,1fr));
 }
 .opts.chips{grid-template-columns:repeat(auto-fill, minmax(236px,1fr));}
 .opt{
@@ -197,11 +197,25 @@ button{font:inherit; color:inherit;}
 .opt:focus-visible{outline:2px solid var(--lume); outline-offset:2px;}
 .opt.sel{border-color:var(--lume); box-shadow:0 0 0 1px var(--lume);}
 .opt-shot{
-  position:relative; aspect-ratio:4/3; background:var(--panel-2);
+  position:relative; aspect-ratio:5/4; background:var(--panel-2);
   border-bottom:1px solid var(--hair); overflow:hidden;
 }
-.opt-shot img{width:100%; height:100%; object-fit:cover;}
+/* frames are stacked; only .on is visible, so they cross-fade in place */
+.opt-shot img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:0; transition:opacity .7s ease;
+}
+.opt-shot img.on{opacity:1;}
 .opt-shot.missing img{display:none;}
+.opt-shot .dots{
+  position:absolute; left:9px; bottom:8px; display:flex; gap:4px; z-index:2;
+}
+.opt-shot .dots i{
+  width:5px; height:5px; border-radius:50%; display:block;
+  background:rgba(255,255,255,.45); box-shadow:0 0 0 1px rgba(0,0,0,.25);
+  transition:background .3s;
+}
+.opt-shot .dots i.on{background:var(--lume-fill);}
 .opt-shot .slot{
   display:none; position:absolute; inset:0; padding:12px;
   flex-direction:column; justify-content:flex-end; gap:4px;
@@ -227,6 +241,12 @@ button{font:inherit; color:inherit;}
 }
 .opt-sub{margin:0; font-size:.83rem; line-height:1.45; color:var(--ink-2);}
 .opt.chip .opt-body{padding:15px 16px;}
+.opt-skip{
+  border-style:dashed; background:none;
+  display:flex; align-items:center; min-height:140px;
+}
+.opt-skip .opt-body{padding:16px 18px;}
+.opt-skip .opt-name{color:var(--ink-2);}
 
 /* ---------- nav ---------- */
 .nav{
@@ -363,6 +383,13 @@ button{font:inherit; color:inherit;}
 }
 .runners .rank{font-family:var(--mono); font-size:.7rem; color:var(--ink-3);}
 .runners .who{min-width:0;}
+.runners .runner-go{
+  background:none; border:none; padding:0; text-align:left; cursor:pointer; width:100%;
+  border-bottom:1px solid transparent;
+}
+.runners .runner-go:hover b{color:var(--lume);}
+.runners .runner-go:focus-visible{outline:2px solid var(--lume); outline-offset:3px;}
+.rung-go{margin-top:14px; width:100%;}
 .runners .who b{
   font-family:var(--display); text-transform:uppercase; letter-spacing:.04em;
   font-weight:700; font-size:var(--step-0); display:block;
@@ -490,16 +517,46 @@ button{font:inherit; color:inherit;}
    ================================================================== */
 const IMG_DIR = "images/";
 
-function shot(cls, file, tag, alt){
-  return `<div class="${cls}">
-    <img src="${IMG_DIR}${file}" alt="${alt.replace(/"/g,"&quot;")}"
-         loading="lazy"
-         onerror="this.closest('.${cls.split(' ')[0]}').classList.add('missing')" />
+/* Accepts one filename or several. With several, the extra frames are stacked
+   and cross-faded by rotateShots() so an option like "Blue" can show the colour
+   on more than one watch — no single photo represents a colour fairly. */
+function shot(cls, files, tag, alt){
+  const list = Array.isArray(files) ? files : [files];
+  const base = cls.split(" ")[0];
+  const imgs = list.map((f, i) => `
+    <img src="${IMG_DIR}${f}" alt="${i === 0 ? alt.replace(/"/g,"&quot;") : ""}"
+         class="${i === 0 ? "on" : ""}" loading="lazy" decoding="async"
+         onerror="this.closest('.${base}').classList.add('missing')" />`).join("");
+  return `<div class="${cls}${list.length > 1 ? " rotates" : ""}" data-frames="${list.length}">
+    ${imgs}
     <div class="slot" aria-hidden="true">
       <span class="slot-tag">${tag}</span>
-      <span class="slot-file">${IMG_DIR}${file}</span>
+      <span class="slot-file">${IMG_DIR}${list[0]}</span>
     </div>
+    ${list.length > 1 ? `<div class="dots" aria-hidden="true">${
+      list.map((_,i)=>`<i class="${i===0?"on":""}"></i>`).join("")}</div>` : ""}
   </div>`;
+}
+
+/* Cross-fade the stacked frames. Staggered so the grid doesn't pulse in unison,
+   and skipped entirely when the viewer asked for reduced motion. */
+let rotTimers = [];
+function stopShots(){ rotTimers.forEach(clearInterval); rotTimers = []; }
+function rotateShots(root){
+  stopShots();
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  root.querySelectorAll(".rotates").forEach((box, n) => {
+    const frames = [...box.querySelectorAll("img")];
+    const dots   = [...box.querySelectorAll(".dots i")];
+    if(frames.length < 2) return;
+    let i = 0;
+    const tick = () => {
+      frames[i].classList.remove("on"); if(dots[i]) dots[i].classList.remove("on");
+      i = (i + 1) % frames.length;
+      frames[i].classList.add("on");    if(dots[i]) dots[i].classList.add("on");
+    };
+    setTimeout(() => { tick(); rotTimers.push(setInterval(tick, 3200)); }, 900 + n * 420);
+  });
 }
 
 /* ==================================================================
@@ -558,7 +615,7 @@ function renderStep(){
   el.opts.innerHTML = s.options.map(o => {
     const sel = answers[s.id] === o.v ? " sel" : "";
     const pic = s.type === "image"
-      ? shot("opt-shot", o.img, s.rail, `${o.label} — ${s.rail.toLowerCase()} option`)
+      ? shot("opt-shot", o.imgs || o.img, s.rail, `${o.label} — ${s.rail.toLowerCase()} option`)
       : "";
     return `<button type="button" class="opt${s.type === "chip" ? " chip" : ""}${sel}" data-v="${o.v}">
       ${pic}
@@ -569,9 +626,24 @@ function renderStep(){
     </button>`;
   }).join("");
 
+  /* An explicit way out, in the grid where the eye already is. Steps that
+     already carry their own "any" answer don't need a second one, and the
+     budget step has to be answered. */
+  const hasAny = s.options.some(o => o.v === "any");
+  if(!s.last && !hasAny){
+    const sel = Object.prototype.hasOwnProperty.call(answers, s.id) && answers[s.id] === null ? " sel" : "";
+    el.opts.insertAdjacentHTML("beforeend", `
+      <button type="button" class="opt opt-skip${sel}" data-v="__skip">
+        <span class="opt-body">
+          <span class="opt-name">Not sure / don't mind</span>
+          <span class="opt-sub">Skip this one. It stops filtering rather than guessing on your behalf, and you can come back to it.</span>
+        </span>
+      </button>`);
+  }
+
   el.opts.querySelectorAll(".opt").forEach(b => {
     b.addEventListener("click", () => {
-      answers[s.id] = b.dataset.v;
+      answers[s.id] = b.dataset.v === "__skip" ? null : b.dataset.v;
       renderRail();
       el.opts.querySelectorAll(".opt").forEach(x => x.classList.remove("sel"));
       b.classList.add("sel");
@@ -579,6 +651,8 @@ function renderStep(){
       setTimeout(advance, 170);
     });
   });
+
+  rotateShots(el.opts);
 
   el.back.disabled = idx === 0;
   el.next.textContent = s.last ? "Show me the watch →" : "Next →";
@@ -732,7 +806,7 @@ function finish(){
     return `<div class="rung ${dir}">
       <div class="rung-flag">
         <span>${dir === "down" ? "One step cheaper" : "One step dearer"}</span>
-        <span class="rung-delta">${delta > 0 ? "+" : "−"}${money(Math.abs(delta)).slice(1).replace(/^/,"$")}</span>
+        <span class="rung-delta">${delta > 0 ? "+" : "−"}${money(Math.abs(delta))}</span>
       </div>
       ${shot("rung-shot", "watch-" + w.s + ".jpg", "Alternate", w.b + " " + w.n)}
       <div class="rung-body">
@@ -741,6 +815,9 @@ function finish(){
         <p class="rung-price">${money(w.p)}</p>
         <p class="rung-why">${w.w}</p>
         <p class="rung-trade"><b>Fit to your spec</b> &nbsp;${pct}% of the match above · ${w.sp[0]} · ${w.sp[w.sp.length-1]}</p>
+        <button type="button" class="btn btn-primary rung-go" data-slug="${w.s}">
+          See this watch &amp; where to buy →
+        </button>
       </div>
     </div>`;
   }
@@ -772,7 +849,9 @@ function finish(){
     <ul class="runners">
       ${runners.map((r,i) => `<li>
         <span class="rank">${pad(i+2)}</span>
-        <span class="who"><b>${r.w.b} ${r.w.n}</b><span>${r.w.sp.join(" · ")}</span></span>
+        <button type="button" class="who runner-go" data-slug="${r.w.s}">
+          <b>${r.w.b} ${r.w.n}</b><span>${r.w.sp.join(" · ")}</span>
+        </button>
         <span class="amt">${money(r.w.p)}</span>
       </li>`).join("")}
     </ul>` : ""}
@@ -809,20 +888,93 @@ function finish(){
   renderRail();
   window.scrollTo({top:0, behavior:"smooth"});
 
+  lastMain = main.w;
   renderBuy(main.w, document.getElementById("buyMount"));
 
-  document.getElementById("againBtn").addEventListener("click", () => {
+  /* Keep the finished results so a detour into a watch's own page can come
+     straight back to them without re-running the quiz. */
+  resultsHTML = el.results.innerHTML;
+
+  wireResults();
+}
+
+/* Re-attachable because the results markup is restored wholesale after a
+   detail view, which destroys the previous listeners. */
+let resultsHTML = "";
+let lastMain = null;
+
+function wireResults(){
+  const again = document.getElementById("againBtn");
+  if(again) again.addEventListener("click", () => {
     STEPS.forEach(s => delete answers[s.id]);
     idx = 0;
     el.results.classList.add("hidden");
     el.stage.classList.remove("hidden");
     renderStep();
   });
-  document.getElementById("editBtn").addEventListener("click", () => {
+  const edit = document.getElementById("editBtn");
+  if(edit) edit.addEventListener("click", () => {
+    idx = 0;                       // back to the first question, not the budget
     el.results.classList.add("hidden");
     el.stage.classList.remove("hidden");
     renderStep();
   });
+  el.results.querySelectorAll(".rung-go, .runner-go").forEach(b => {
+    b.addEventListener("click", () => showDetail(b.dataset.slug));
+  });
+  const buyMount = document.getElementById("buyMount");
+  if(buyMount && lastMain) renderBuy(lastMain, buyMount);
+}
+
+/* ---------- a watch's own page ---------- */
+function showDetail(slug){
+  const w = WATCHES.find(x => x.s === slug);
+  if(!w) return;
+  const inYourBracket = BRACKETS[answers.price];
+  const rel = inYourBracket
+    ? (w.p > inYourBracket.max ? "above" : w.p < inYourBracket.min ? "below" : "within")
+    : "within";
+  const relCopy = {
+    above: `This sits above the ${inYourBracket && inYourBracket.label} you picked. What the extra money buys is below.`,
+    below: `This sits below the ${inYourBracket && inYourBracket.label} you picked — the argument for spending less.`,
+    within:`This is inside the ${inYourBracket && inYourBracket.label} you picked.`
+  }[rel];
+
+  el.results.innerHTML = `
+    <div class="nav" style="margin:0 0 24px; padding:0; border:none">
+      <button class="btn" id="backToResults" type="button">← Back to your match</button>
+    </div>
+    <div class="result-head">
+      <span class="q-step num">${w.b}</span>
+      <h2 class="verdict"><small>${relCopy}</small>${w.n}</h2>
+    </div>
+    <div class="plate">
+      <div class="plate-grid">
+        ${shot("plate-shot", "watch-" + w.s + ".jpg", "Hero shot", w.b + " " + w.n)}
+        <div class="plate-info">
+          <p class="plate-price">${money(w.p)}<span>approx. street price</span></p>
+          <p class="plate-why">${w.w}</p>
+          <ul class="specs">
+            ${w.sp.map(v => `<li><span class="k">Spec</span><span class="lead"></span><span class="v">${v}</span></li>`).join("")}
+            <li><span class="k">Case</span><span class="lead"></span><span class="v">${
+              {s:"34–37 mm",m:"37–39.5 mm",l:"40–42 mm",xl:"42 mm +"}[w.sz]} · ${w.sh}</span></li>
+            <li><span class="k">Dial</span><span class="lead"></span><span class="v">${w.dc} · ${w.ly} · ${w.ix}</span></li>
+            <li><span class="k">Bezel</span><span class="lead"></span><span class="v">${w.bz}</span></li>
+            <li><span class="k">Worn on</span><span class="lead"></span><span class="v">${w.st.join(", ")}</span></li>
+            <li><span class="k">Movement</span><span class="lead"></span><span class="v">${w.mv}</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="buyMount"></div>`;
+
+  renderBuy(w, document.getElementById("buyMount"));
+  document.getElementById("backToResults").addEventListener("click", () => {
+    el.results.innerHTML = resultsHTML;
+    wireResults();
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+  window.scrollTo({top:0, behavior:"smooth"});
 }
 
 /* ---------- theme ---------- */
