@@ -376,6 +376,40 @@ button{font:inherit; color:inherit;}
 }
 .footnote b{color:var(--ink-2); letter-spacing:.1em; text-transform:uppercase; font-weight:400;}
 
+/* ---------- where to buy ---------- */
+.buy{
+  background:var(--panel); border:1px solid var(--hair); border-radius:3px;
+  padding:22px 24px 24px; margin-bottom:34px;
+}
+.buy-route{
+  margin:0 0 18px; color:var(--ink-2); font-size:var(--step-0);
+  max-width:66ch; line-height:1.6;
+}
+.buy-zip{
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  padding-bottom:20px; border-bottom:1px dotted var(--hair);
+}
+.buy-zip label{
+  font-family:var(--mono); font-size:.66rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+.buy-zip input{
+  font-family:var(--mono); font-size:var(--step-0); font-variant-numeric:tabular-nums;
+  letter-spacing:.12em; width:7.5em; padding:8px 10px; color:var(--ink);
+  background:var(--panel-2); border:1px solid var(--hair-strong); border-radius:2px;
+}
+.buy-zip input:focus-visible{outline:2px solid var(--lume); outline-offset:1px; border-color:var(--lume);}
+.buy-err{font-family:var(--mono); font-size:.68rem; color:var(--radium);}
+.buy-group{padding:18px 0 0; border-bottom:1px dotted var(--hair);}
+.buy-group:last-child{border-bottom:none; padding-bottom:0;}
+.buy-group h3{
+  font-family:var(--display); text-transform:uppercase; letter-spacing:.08em;
+  font-size:var(--step-0); font-weight:700; margin:0 0 4px;
+}
+.buy-group p{margin:0 0 11px; font-size:.86rem; color:var(--ink-2); max-width:62ch;}
+.buy-links{display:flex; flex-wrap:wrap; gap:8px;}
+.buy-links .btn{text-decoration:none;}
+
 /* ---------- photo credits ---------- */
 .credits{
   margin-top:20px; border-top:1px solid var(--hair); padding-top:14px;
@@ -443,6 +477,7 @@ button{font:inherit; color:inherit;}
 </main>
 
 <script src="data.js"></script>
+<script src="buy.js"></script>
 <script>
 "use strict";
 
@@ -742,6 +777,8 @@ function finish(){
       </li>`).join("")}
     </ul>` : ""}
 
+    <div id="buyMount"></div>
+
     <div class="ladder-head">
       <h2>Your spec sheet</h2>
       <p>What the recommendation was built from</p>
@@ -771,6 +808,8 @@ function finish(){
   el.prog.style.width = "100%";
   renderRail();
   window.scrollTo({top:0, behavior:"smooth"});
+
+  renderBuy(main.w, document.getElementById("buyMount"));
 
   document.getElementById("againBtn").addEventListener("click", () => {
     STEPS.forEach(s => delete answers[s.id]);
