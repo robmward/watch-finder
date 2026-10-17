@@ -65,3 +65,7 @@ cut rather than illustrated with the wrong watch).
 Approximate US street/retail in USD, accurate to a bracket rather than a
 quote. Several steel sports models list well below what they actually trade
 for.
+
+## Deployment
+
+Live at https://watch-finder-omega.vercel.app — pushes to `main` deploy automatically.
