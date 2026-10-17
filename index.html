@@ -377,16 +377,19 @@ button{font:inherit; color:inherit;}
 
 /* ---------- runners up ---------- */
 .runners{list-style:none; margin:0 0 30px; padding:0; border-top:1px solid var(--hair);}
-.runners li{
-  display:grid; grid-template-columns:40px 1fr auto; gap:14px; align-items:center;
-  padding:11px 2px; border-bottom:1px dotted var(--hair);
+.runners li{border-bottom:1px dotted var(--hair);}
+.runners .runner-go{
+  display:grid; grid-template-columns:34px 68px 1fr auto; gap:14px; align-items:center;
+  width:100%; padding:10px 4px; background:none; border:none; cursor:pointer;
+  text-align:left; border-radius:3px; transition:background .15s;
+}
+.runners .runner-go:hover{background:var(--panel-2);}
+.runner-thumb{
+  width:68px; height:52px; object-fit:cover; border-radius:2px;
+  border:1px solid var(--hair); background:var(--panel-2);
 }
 .runners .rank{font-family:var(--mono); font-size:.7rem; color:var(--ink-3);}
 .runners .who{min-width:0;}
-.runners .runner-go{
-  background:none; border:none; padding:0; text-align:left; cursor:pointer; width:100%;
-  border-bottom:1px solid transparent;
-}
 .runners .runner-go:hover b{color:var(--lume);}
 .runners .runner-go:focus-visible{outline:2px solid var(--lume); outline-offset:3px;}
 .rung-go{margin-top:14px; width:100%;}
@@ -848,11 +851,12 @@ function finish(){
     </div>
     <ul class="runners">
       ${runners.map((r,i) => `<li>
-        <span class="rank">${pad(i+2)}</span>
-        <button type="button" class="who runner-go" data-slug="${r.w.s}">
-          <b>${r.w.b} ${r.w.n}</b><span>${r.w.sp.join(" · ")}</span>
+        <button type="button" class="runner-go" data-slug="${r.w.s}">
+          <span class="rank">${pad(i+2)}</span>
+          <img class="runner-thumb" src="${IMG_DIR}watch-${r.w.s}.jpg" alt="" loading="lazy" decoding="async" />
+          <span class="who"><b>${r.w.b} ${r.w.n}</b><span>${r.w.sp.join(" · ")}</span></span>
+          <span class="amt">${money(r.w.p)}</span>
         </button>
-        <span class="amt">${money(r.w.p)}</span>
       </li>`).join("")}
     </ul>` : ""}
 
