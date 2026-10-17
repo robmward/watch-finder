@@ -126,9 +126,14 @@ button{font:inherit; color:inherit;}
   .shell{grid-template-columns:1fr; gap:24px;}
 }
 
-/* ---------- spec rail ---------- */
-.rail{position:sticky; top:24px;}
-@media (max-width:940px){.rail{position:static;}}
+/* ---------- spec rail ----------
+   The question comes first in the DOM so a phone sees it immediately; on
+   desktop the rail is pulled back into the left column. */
+.rail{position:sticky; top:24px; order:-1;}
+@media (max-width:940px){
+  .rail{position:static; order:2; margin-top:8px;}
+  .rail-note{display:none;}
+}
 .rail-head{
   display:flex; justify-content:space-between; align-items:baseline;
   border-bottom:1px solid var(--hair-strong); padding-bottom:8px; margin-bottom:4px;
@@ -440,6 +445,51 @@ button{font:inherit; color:inherit;}
 .buy-links{display:flex; flex-wrap:wrap; gap:8px;}
 .buy-links .btn{text-decoration:none;}
 
+/* ---------- asking-price chart ---------- */
+.pchart-loading{margin:0; font-family:var(--mono); font-size:.7rem; color:var(--ink-3);}
+.pchart-track{
+  position:relative; height:34px; margin:6px 0 4px;
+  background:var(--panel-2); border:1px solid var(--hair); border-radius:3px;
+}
+.pchart-whisker{
+  position:absolute; top:50%; height:1px; background:var(--hair-strong);
+}
+.pchart-box{
+  position:absolute; top:7px; bottom:7px;
+  background:color-mix(in srgb, var(--lume-fill) 30%, transparent);
+  border:1px solid var(--lume); border-radius:2px;
+}
+.pchart-median{
+  position:absolute; top:3px; bottom:3px; width:2px; background:var(--lume);
+}
+.pchart-list{
+  position:absolute; top:0; bottom:0; width:2px; background:var(--radium-fill);
+}
+.pchart-list::after{
+  content:""; position:absolute; left:-3px; top:-4px;
+  border-left:4px solid transparent; border-right:4px solid transparent;
+  border-top:5px solid var(--radium-fill);
+}
+.pchart-scale{
+  display:flex; justify-content:space-between;
+  font-family:var(--mono); font-size:.64rem; color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.pchart-key{
+  list-style:none; margin:14px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:6px 18px;
+  font-family:var(--mono); font-size:.68rem; color:var(--ink-2);
+}
+.pchart-key li{display:flex; align-items:center; gap:7px;}
+.pchart-key i{width:12px; height:10px; display:block; border-radius:1px;}
+.pchart-key .k-median{background:var(--lume);}
+.pchart-key .k-box{background:color-mix(in srgb, var(--lume-fill) 30%, transparent); border:1px solid var(--lume);}
+.pchart-key .k-list{background:var(--radium-fill);}
+.pchart-read{margin:14px 0 0; font-size:.9rem; color:var(--ink);}
+.pchart-note{
+  margin:10px 0 0; padding-top:10px; border-top:1px dotted var(--hair);
+  font-family:var(--mono); font-size:.64rem; line-height:1.6; color:var(--ink-3);
+}
+
 /* ---------- photo credits ---------- */
 .credits{
   margin-top:20px; border-top:1px solid var(--hair); padding-top:14px;
@@ -455,6 +505,28 @@ button{font:inherit; color:inherit;}
 .credits a{color:var(--ink-2);}
 .credits a:hover{color:var(--lume);}
 .credits span{color:var(--radium);}
+
+/* ---------- phone ---------- */
+@media (max-width:620px){
+  .shell{padding:18px 14px 56px;}
+  .masthead-in{padding:14px 14px;}
+  .tagline{flex-basis:100%; font-size:.72rem;}
+  .q-title{font-size:1.65rem;}
+  .opts{grid-template-columns:1fr; gap:12px;}
+  .opt-shot{aspect-ratio:16/10;}          /* shorter, so the label stays in view */
+  .nav{gap:8px;}
+  .nav .btn{flex:1 1 auto; text-align:center;}
+  .nav-note{flex-basis:100%; margin-left:0;}
+  .verdict{font-size:2.1rem;}
+  .plate-info{padding:20px 18px 22px;}
+  .buy{padding:18px 16px 20px;}
+  .buy-zip input{flex:1 1 140px; width:auto;}
+  .buy-links .btn{flex:1 1 100%; text-align:center;}
+  .runners .runner-go{grid-template-columns:26px 56px 1fr auto; gap:10px;}
+  .runners .who span{display:none;}        /* spec line is unreadable at this width */
+  .runner-thumb{width:56px; height:44px;}
+  .credits ul{grid-template-columns:1fr;}
+}
 
 .hidden{display:none !important;}
 @media (prefers-reduced-motion:reduce){
@@ -474,15 +546,6 @@ button{font:inherit; color:inherit;}
 
 <main class="shell">
 
-  <!-- ===================== SPEC RAIL ===================== -->
-  <aside class="rail" aria-label="Your spec sheet">
-    <div class="rail-head">
-      <h2 class="rail-title">Your spec</h2>
-      <span class="rail-count num" id="railCount">0 / 11</span>
-    </div>
-    <ul class="rail-list" id="railList"></ul>
-    <p class="rail-note">Every line is skippable. A blank line means “no preference” and simply stops filtering.</p>
-  </aside>
 
   <!-- ===================== STAGE ===================== -->
   <section class="stage" id="stage">
@@ -504,10 +567,21 @@ button{font:inherit; color:inherit;}
   <!-- ===================== RESULTS ===================== -->
   <section class="stage hidden" id="results"></section>
 
+  <!-- ===================== SPEC RAIL ===================== -->
+  <aside class="rail" aria-label="Your spec sheet">
+    <div class="rail-head">
+      <h2 class="rail-title">Your spec</h2>
+      <span class="rail-count num" id="railCount">0 / 11</span>
+    </div>
+    <ul class="rail-list" id="railList"></ul>
+    <p class="rail-note">Every line is skippable. A blank line means “no preference” and simply stops filtering.</p>
+  </aside>
+
 </main>
 
 <script src="data.js"></script>
 <script src="buy.js"></script>
+<script src="prices.js"></script>
 <script>
 "use strict";
 
@@ -528,7 +602,7 @@ function shot(cls, files, tag, alt){
   const base = cls.split(" ")[0];
   const imgs = list.map((f, i) => `
     <img src="${IMG_DIR}${f}" alt="${i === 0 ? alt.replace(/"/g,"&quot;") : ""}"
-         class="${i === 0 ? "on" : ""}" loading="lazy" decoding="async"
+         class="${i === 0 ? "on" : ""}" loading="${i === 0 ? "eager" : "lazy"}" fetchpriority="${i === 0 ? "high" : "low"}" decoding="async"
          onerror="this.closest('.${base}').classList.add('missing')" />`).join("");
   return `<div class="${cls}${list.length > 1 ? " rotates" : ""}" data-frames="${list.length}">
     ${imgs}
@@ -771,7 +845,7 @@ function finish(){
     const w = r.w;
     return `<div class="plate">
       <div class="plate-grid">
-        ${shot("plate-shot", "watch-" + w.s + ".jpg", "Hero shot", w.b + " " + w.n)}
+        ${shot("plate-shot", "watch-" + w.s + ".webp", "Hero shot", w.b + " " + w.n)}
         <div class="plate-info">
           <p class="plate-brand">${w.b}</p>
           <h3 class="plate-name">${w.n}</h3>
@@ -811,7 +885,7 @@ function finish(){
         <span>${dir === "down" ? "One step cheaper" : "One step dearer"}</span>
         <span class="rung-delta">${delta > 0 ? "+" : "−"}${money(Math.abs(delta))}</span>
       </div>
-      ${shot("rung-shot", "watch-" + w.s + ".jpg", "Alternate", w.b + " " + w.n)}
+      ${shot("rung-shot", "watch-" + w.s + ".webp", "Alternate", w.b + " " + w.n)}
       <div class="rung-body">
         <p class="rung-brand">${w.b}</p>
         <h3 class="rung-name">${w.n}</h3>
@@ -853,13 +927,14 @@ function finish(){
       ${runners.map((r,i) => `<li>
         <button type="button" class="runner-go" data-slug="${r.w.s}">
           <span class="rank">${pad(i+2)}</span>
-          <img class="runner-thumb" src="${IMG_DIR}watch-${r.w.s}.jpg" alt="" loading="lazy" decoding="async" />
+          <img class="runner-thumb" src="${IMG_DIR}watch-${r.w.s}.webp" alt="" loading="lazy" decoding="async" />
           <span class="who"><b>${r.w.b} ${r.w.n}</b><span>${r.w.sp.join(" · ")}</span></span>
           <span class="amt">${money(r.w.p)}</span>
         </button>
       </li>`).join("")}
     </ul>` : ""}
 
+    <div id="priceMount"></div>
     <div id="buyMount"></div>
 
     <div class="ladder-head">
@@ -893,6 +968,7 @@ function finish(){
   window.scrollTo({top:0, behavior:"smooth"});
 
   lastMain = main.w;
+  renderPrices(main.w, document.getElementById("priceMount"));
   renderBuy(main.w, document.getElementById("buyMount"));
 
   /* Keep the finished results so a detour into a watch's own page can come
@@ -928,6 +1004,8 @@ function wireResults(){
   });
   const buyMount = document.getElementById("buyMount");
   if(buyMount && lastMain) renderBuy(lastMain, buyMount);
+  const pm = document.getElementById("priceMount");
+  if(pm && lastMain) renderPrices(lastMain, pm);
 }
 
 /* ---------- a watch's own page ---------- */
@@ -954,7 +1032,7 @@ function showDetail(slug){
     </div>
     <div class="plate">
       <div class="plate-grid">
-        ${shot("plate-shot", "watch-" + w.s + ".jpg", "Hero shot", w.b + " " + w.n)}
+        ${shot("plate-shot", "watch-" + w.s + ".webp", "Hero shot", w.b + " " + w.n)}
         <div class="plate-info">
           <p class="plate-price">${money(w.p)}<span>approx. street price</span></p>
           <p class="plate-why">${w.w}</p>
@@ -970,8 +1048,10 @@ function showDetail(slug){
         </div>
       </div>
     </div>
+    <div id="priceMount"></div>
     <div id="buyMount"></div>`;
 
+  renderPrices(w, document.getElementById("priceMount"));
   renderBuy(w, document.getElementById("buyMount"));
   document.getElementById("backToResults").addEventListener("click", () => {
     el.results.innerHTML = resultsHTML;

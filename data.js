@@ -11,10 +11,10 @@ const STEPS = [
   kicker:"Not the fantasy job — the one it does on a Tuesday. Everything downstream is filtered through this answer, so it's the only question worth overthinking.",
   type:"image",
   options:[
-    {v:"one",      label:"The only one",     sub:"Worn daily, with everything. Has to survive being forgotten about.", imgs:["vibe-one-watch-0.jpg"]},
-    {v:"dress",    label:"Cuffs and dinner", sub:"Slim enough to slide under a shirt sleeve. Quiet, flat, legible at a glance.", imgs:["vibe-dress-0.jpg"]},
-    {v:"tool",     label:"Hard use",         sub:"Field, water, workshop, travel. Scratches are part of the finish.", imgs:["vibe-tool-0.jpg"]},
-    {v:"statement",label:"A bit of theater", sub:"Gets noticed and gives you something to talk about. Character over neutrality.", imgs:["vibe-statement-0.jpg"]}
+    {v:"one",      label:"The only one",     sub:"Worn daily, with everything. Has to survive being forgotten about.", imgs:["vibe-one-watch-0.webp"]},
+    {v:"dress",    label:"Cuffs and dinner", sub:"Slim enough to slide under a shirt sleeve. Quiet, flat, legible at a glance.", imgs:["vibe-dress-0.webp"]},
+    {v:"tool",     label:"Hard use",         sub:"Field, water, workshop, travel. Scratches are part of the finish.", imgs:["vibe-tool-0.webp"]},
+    {v:"statement",label:"A bit of theater", sub:"Gets noticed and gives you something to talk about. Character over neutrality.", imgs:["vibe-statement-0.webp"]}
   ]},
 
 { id:"sz", rail:"Size", weight:2,
@@ -33,10 +33,10 @@ const STEPS = [
   kicker:"The silhouette is the first thing anyone registers — before the dial, before the logo. Round is the safe default for good reason; the other three are decisions.",
   type:"image",
   options:[
-    {v:"round",      label:"Round",       sub:"Lugs, a bezel, a circle. Most great watches, and it never looks wrong.", imgs:["case-round-0.jpg","case-round-1.jpg","case-round-2.jpg"]},
-    {v:"cushion",    label:"Cushion",     sub:"Squared body with soft corners. Wears wider than its number.", imgs:["case-cushion-0.jpg","case-cushion-1.jpg"]},
-    {v:"rect",       label:"Rectangular", sub:"Tank and Reverso territory. Dressy by default, and nothing else looks like it.", imgs:["case-rectangular-0.jpg","case-rectangular-1.jpg","case-rectangular-2.jpg"]},
-    {v:"integrated", label:"Integrated",  sub:"Case and bracelet are one continuous form with no gap. Seventies design.", imgs:["case-integrated-0.jpg","case-integrated-1.jpg","case-integrated-2.jpg"]}
+    {v:"round",      label:"Round",       sub:"Lugs, a bezel, a circle. Most great watches, and it never looks wrong.", imgs:["case-round-0.webp","case-round-1.webp","case-round-2.webp"]},
+    {v:"cushion",    label:"Cushion",     sub:"Squared body with soft corners. Wears wider than its number.", imgs:["case-cushion-0.webp","case-cushion-1.webp"]},
+    {v:"rect",       label:"Rectangular", sub:"Tank and Reverso territory. Dressy by default, and nothing else looks like it.", imgs:["case-rectangular-0.webp","case-rectangular-1.webp","case-rectangular-2.webp"]},
+    {v:"integrated", label:"Integrated",  sub:"Case and bracelet are one continuous form with no gap. Seventies design.", imgs:["case-integrated-0.webp","case-integrated-1.webp","case-integrated-2.webp"]}
   ]},
 
 { id:"bz", rail:"Bezel", weight:3,
@@ -44,13 +44,13 @@ const STEPS = [
   kicker:"The ring around the crystal sets the tone of the whole watch. A rotating dive bezel and a fluted gold one can sit on the same case and read as completely different objects.",
   type:"image",
   options:[
-    {v:"dive",  label:"Rotating dive",  sub:"Sixty-minute scale with a lume pip at zero. Turns to time anything.", imgs:["bezel-dive-0.jpg"]},
-    {v:"smooth",label:"Smooth polished",sub:"A plain narrow ring. Lets the dial do the talking; dresses up and down.", imgs:["bezel-smooth-0.jpg"]},
-    {v:"none",  label:"Barely there",   sub:"Reduced to a hairline so the dial runs nearly edge to edge.", imgs:["bezel-slim-0.jpg"]},
-    {v:"fluted",label:"Fluted",         sub:"Machined radial flutes, usually gold. Unapologetically formal, catches every light.", imgs:["bezel-fluted-0.jpg"]},
-    {v:"gmt",   label:"24-hour GMT",    sub:"Split two-tone ring numbered to 24. Day and night in two colours.", imgs:["bezel-gmt-0.jpg"]},
-    {v:"tachy", label:"Tachymeter",     sub:"Fixed scale for speed over distance. The chronograph's native habitat.", imgs:["bezel-tachymeter-0.jpg"]},
-    {v:"coin",  label:"Coin-edge / notched", sub:"Knurled and grippy, with pilot and compressor lineage.", imgs:["bezel-coin-edge-0.jpg"]}
+    {v:"dive",  label:"Rotating dive",  sub:"Sixty-minute scale with a lume pip at zero. Turns to time anything.", imgs:["bezel-dive-0.webp"]},
+    {v:"smooth",label:"Smooth polished",sub:"A plain narrow ring. Lets the dial do the talking; dresses up and down.", imgs:["bezel-smooth-0.webp"]},
+    {v:"none",  label:"Barely there",   sub:"Reduced to a hairline so the dial runs nearly edge to edge.", imgs:["bezel-slim-0.webp"]},
+    {v:"fluted",label:"Fluted",         sub:"Machined radial flutes, usually gold. Unapologetically formal, catches every light.", imgs:["bezel-fluted-0.webp"]},
+    {v:"gmt",   label:"24-hour GMT",    sub:"Split two-tone ring numbered to 24. Day and night in two colours.", imgs:["bezel-gmt-0.webp"]},
+    {v:"tachy", label:"Tachymeter",     sub:"Fixed scale for speed over distance. The chronograph's native habitat.", imgs:["bezel-tachymeter-0.webp"]},
+    {v:"coin",  label:"Coin-edge / notched", sub:"Knurled and grippy, with pilot and compressor lineage.", imgs:["bezel-coin-edge-0.webp"]}
   ]},
 
 { id:"dc", rail:"Dial", weight:2,
@@ -58,11 +58,11 @@ const STEPS = [
   kicker:"Worth being honest rather than aspirational. Black and silver are easy forever; green and salmon are a mood you have to still be in two years from now.",
   type:"image",
   options:[
-    {v:"black",label:"Black",           sub:"Maximum contrast, maximum legibility, zero risk. The reference answer.", imgs:["dial-black-0.jpg"]},
-    {v:"white",label:"White or silver", sub:"Crisp and faintly instrumental. Reads dressier than black on the same case.", imgs:["dial-white-0.jpg"]},
-    {v:"blue", label:"Blue",            sub:"The modern crowd-pleaser. Navy behaves like black; brighter blues are a real choice.", imgs:["dial-blue-0.jpg"]},
-    {v:"green",label:"Green",           sub:"From near-black forest to full emerald. Unusual enough to register as taste.", imgs:["dial-green-0.jpg"]},
-    {v:"warm", label:"Champagne or brown", sub:"Vintage warmth. Pairs with gold and brown leather, looks older than it is.", imgs:["dial-warm-0.jpg"]}
+    {v:"black",label:"Black",           sub:"Maximum contrast, maximum legibility, zero risk. The reference answer.", imgs:["dial-black-0.webp"]},
+    {v:"white",label:"White or silver", sub:"Crisp and faintly instrumental. Reads dressier than black on the same case.", imgs:["dial-white-0.webp"]},
+    {v:"blue", label:"Blue",            sub:"The modern crowd-pleaser. Navy behaves like black; brighter blues are a real choice.", imgs:["dial-blue-0.webp"]},
+    {v:"green",label:"Green",           sub:"From near-black forest to full emerald. Unusual enough to register as taste.", imgs:["dial-green-0.webp"]},
+    {v:"warm", label:"Champagne or brown", sub:"Vintage warmth. Pairs with gold and brown leather, looks older than it is.", imgs:["dial-warm-0.webp"]}
   ]},
 
 { id:"ly", rail:"Layout", weight:2,
@@ -70,11 +70,11 @@ const STEPS = [
   kicker:"Everything you add is a small tax on legibility and a small gain in interest. A no-date dial is the purest layout in watchmaking and also the least useful.",
   type:"image",
   options:[
-    {v:"plain",  label:"Three hands, nothing else", sub:"No date, no window, perfect symmetry. The purist's answer.", imgs:["layout-three-hand-0.jpg"]},
-    {v:"date",   label:"Date window",               sub:"One aperture, usually at three. Mildly ruins the symmetry; you'll use it daily.", imgs:["layout-date-0.jpg"]},
-    {v:"chrono", label:"Chronograph",               sub:"Subdials and pushers on the case flank. Busy, mechanical, handsome.", imgs:["layout-chronograph-0.jpg"]},
-    {v:"gmt",    label:"Second time zone",          sub:"A fourth hand on a 24-hour track. The one complication travellers actually use.", imgs:["layout-gmt-0.jpg"]},
-    {v:"digital",label:"Digital display",           sub:"LCD, no hands. Alarms, timers, indestructible. A different kind of honest.", imgs:["layout-digital-0.jpg"]}
+    {v:"plain",  label:"Three hands, nothing else", sub:"No date, no window, perfect symmetry. The purist's answer.", imgs:["layout-three-hand-0.webp"]},
+    {v:"date",   label:"Date window",               sub:"One aperture, usually at three. Mildly ruins the symmetry; you'll use it daily.", imgs:["layout-date-0.webp"]},
+    {v:"chrono", label:"Chronograph",               sub:"Subdials and pushers on the case flank. Busy, mechanical, handsome.", imgs:["layout-chronograph-0.webp"]},
+    {v:"gmt",    label:"Second time zone",          sub:"A fourth hand on a 24-hour track. The one complication travellers actually use.", imgs:["layout-gmt-0.webp"]},
+    {v:"digital",label:"Digital display",           sub:"LCD, no hands. Alarms, timers, indestructible. A different kind of honest.", imgs:["layout-digital-0.webp"]}
   ]},
 
 { id:"ix", rail:"Markers", weight:2,
@@ -82,11 +82,11 @@ const STEPS = [
   kicker:"Markers and hands are the typography of a watch — the detail you stare at for years without naming it. This is where dress and tool really part ways.",
   type:"image",
   options:[
-    {v:"baton", label:"Applied batons",       sub:"Faceted steel sticks catching light at the edges. Clean and hard to dislike.", imgs:["markers-baton-0.jpg"]},
-    {v:"dots",  label:"Dive plots",           sub:"Round lume blocks, bars at the quarters, a triangle at twelve.", imgs:["markers-dive-plots-0.jpg"]},
-    {v:"arabic",label:"Arabic numerals",      sub:"Printed or applied numbers all the way round. Open, legible, slightly bookish.", imgs:["markers-arabic-0.jpg"]},
-    {v:"field", label:"Full field numbering", sub:"Every hour plus an inner 13–24 track. Maximum information, military lineage.", imgs:["markers-field-0.jpg"]},
-    {v:"roman", label:"Roman numerals",       sub:"Formal and unmistakably classical. The dressiest thing you can print on a dial.", imgs:["markers-roman-0.jpg"]}
+    {v:"baton", label:"Applied batons",       sub:"Faceted steel sticks catching light at the edges. Clean and hard to dislike.", imgs:["markers-baton-0.webp"]},
+    {v:"dots",  label:"Dive plots",           sub:"Round lume blocks, bars at the quarters, a triangle at twelve.", imgs:["markers-dive-plots-0.webp"]},
+    {v:"arabic",label:"Arabic numerals",      sub:"Printed or applied numbers all the way round. Open, legible, slightly bookish.", imgs:["markers-arabic-0.webp"]},
+    {v:"field", label:"Full field numbering", sub:"Every hour plus an inner 13–24 track. Maximum information, military lineage.", imgs:["markers-field-0.webp"]},
+    {v:"roman", label:"Roman numerals",       sub:"Formal and unmistakably classical. The dressiest thing you can print on a dial.", imgs:["markers-roman-0.webp"]}
   ]},
 
 { id:"st", rail:"Bracelet", weight:2,
@@ -94,13 +94,13 @@ const STEPS = [
   kicker:"Changeable later, but it dictates how the watch feels more than anything except size — and a bracelet can be a quarter of what you paid.",
   type:"image",
   options:[
-    {v:"oyster",    label:"Three-link steel", sub:"Brushed, flat and sturdy. The everyday default; suits almost everything.", imgs:["strap-oyster-0.jpg"]},
-    {v:"jubilee",   label:"Five-link steel",  sub:"Narrower polished centre links. Dressier, more fluid, slightly jewelry-ish.", imgs:["strap-jubilee-0.jpg"]},
-    {v:"integrated",label:"Integrated taper", sub:"Flows out of the case with no lug gap. Looks expensive; you can't swap it.", imgs:["strap-integrated-0.jpg"]},
-    {v:"leather",   label:"Leather",          sub:"Warm, light, quiet. Dresses anything up and wears out every couple of years.", imgs:["strap-leather-0.jpg"]},
-    {v:"nato",      label:"Fabric or NATO",   sub:"One pass-through strap, cheap to swap, nothing to scratch. Pure utility.", imgs:["strap-nato-0.jpg"]},
-    {v:"mesh",      label:"Milanese mesh",    sub:"Fine woven steel. Smooth on the wrist and infinitely adjustable.", imgs:["strap-mesh-0.jpg"]},
-    {v:"rubber",    label:"Rubber",           sub:"Pool, shower, sweat, ocean. Modern rubber is genuinely nice, not a compromise.", imgs:["strap-rubber-0.jpg"]}
+    {v:"oyster",    label:"Three-link steel", sub:"Brushed, flat and sturdy. The everyday default; suits almost everything.", imgs:["strap-oyster-0.webp"]},
+    {v:"jubilee",   label:"Five-link steel",  sub:"Narrower polished centre links. Dressier, more fluid, slightly jewelry-ish.", imgs:["strap-jubilee-0.webp"]},
+    {v:"integrated",label:"Integrated taper", sub:"Flows out of the case with no lug gap. Looks expensive; you can't swap it.", imgs:["strap-integrated-0.webp"]},
+    {v:"leather",   label:"Leather",          sub:"Warm, light, quiet. Dresses anything up and wears out every couple of years.", imgs:["strap-leather-0.webp"]},
+    {v:"nato",      label:"Fabric or NATO",   sub:"One pass-through strap, cheap to swap, nothing to scratch. Pure utility.", imgs:["strap-nato-0.webp"]},
+    {v:"mesh",      label:"Milanese mesh",    sub:"Fine woven steel. Smooth on the wrist and infinitely adjustable.", imgs:["strap-mesh-0.webp"]},
+    {v:"rubber",    label:"Rubber",           sub:"Pool, shower, sweat, ocean. Modern rubber is genuinely nice, not a compromise.", imgs:["strap-rubber-0.webp"]}
   ]},
 
 { id:"mv", rail:"Movement", weight:3,
@@ -328,7 +328,7 @@ const CREDITS = [
   "page": "https://commons.wikimedia.org/wiki/File:Casio_F-91W_watch_(2023)_(front_closeup_-_time)_(minor_retouch).jpg"
  },
  {
-  "title": "152-rolex-explorer-ref-14270-circa-2001-mostra-store-aix-montres-vintage.jpg",
+  "title": "152-rolex-explorer-ref-14270-circa-2001-mostra-store-aix-montres-vintage.webp",
   "author": "Thierry Mostra-store",
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:152-rolex-explorer-ref-14270-circa-2001-mostra-store-aix-montres-vintage.jpg"
