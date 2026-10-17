@@ -143,7 +143,7 @@ const BRACKETS = {
   B:{min:250,  max:750,   label:"$250 – $750"},
   C:{min:750,  max:2000,  label:"$750 – $2,000"},
   D:{min:2000, max:6000,  label:"$2,000 – $6,000"},
-  E:{min:6000, max:15000, label:"$6,000 – $15,000"}
+  E:{min:6000, max:Infinity, label:"$6,000 and up"}
 };
 
 /* s=slug n=model b=brand p=price · sz size sh shape bz bezel dc dial
