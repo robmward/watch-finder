@@ -11,10 +11,10 @@ const STEPS = [
   kicker:"Not the fantasy job — the one it does on a Tuesday. Everything downstream is filtered through this answer, so it's the only question worth overthinking.",
   type:"image",
   options:[
-    {v:"one",      label:"The only one",     sub:"Worn daily, with everything. Has to survive being forgotten about.", imgs:["vibe-one-watch-0.jpg","vibe-one-watch-1.jpg","vibe-one-watch-2.jpg"]},
-    {v:"dress",    label:"Cuffs and dinner", sub:"Slim enough to slide under a shirt sleeve. Quiet, flat, legible at a glance.", imgs:["vibe-dress-0.jpg","vibe-dress-1.jpg","vibe-dress-2.jpg"]},
-    {v:"tool",     label:"Hard use",         sub:"Field, water, workshop, travel. Scratches are part of the finish.", imgs:["vibe-tool-0.jpg","vibe-tool-1.jpg","vibe-tool-2.jpg"]},
-    {v:"statement",label:"A bit of theater", sub:"Gets noticed and gives you something to talk about. Character over neutrality.", imgs:["vibe-statement-0.jpg","vibe-statement-1.jpg","vibe-statement-2.jpg"]}
+    {v:"one",      label:"The only one",     sub:"Worn daily, with everything. Has to survive being forgotten about.", imgs:["vibe-one-watch-0.jpg"]},
+    {v:"dress",    label:"Cuffs and dinner", sub:"Slim enough to slide under a shirt sleeve. Quiet, flat, legible at a glance.", imgs:["vibe-dress-0.jpg"]},
+    {v:"tool",     label:"Hard use",         sub:"Field, water, workshop, travel. Scratches are part of the finish.", imgs:["vibe-tool-0.jpg"]},
+    {v:"statement",label:"A bit of theater", sub:"Gets noticed and gives you something to talk about. Character over neutrality.", imgs:["vibe-statement-0.jpg"]}
   ]},
 
 { id:"sz", rail:"Size", weight:2,
@@ -22,10 +22,10 @@ const STEPS = [
   kicker:"Everyone quotes case width, but lug-to-lug decides whether it actually sits right. Pick what looks correct to you — your eye is the instrument.",
   type:"image",
   options:[
-    {v:"s", label:"34 – 37 mm",   sub:"Vintage proportions. Reads as a watch, not as equipment.", imgs:["size-34-37-0.jpg","size-34-37-1.jpg","size-34-37-2.jpg"]},
-    {v:"m", label:"37 – 39.5 mm", sub:"The classic middle, where most of the best designs of the last 70 years live.", imgs:["size-37-39-0.jpg","size-37-39-1.jpg","size-37-39-2.jpg"]},
-    {v:"l", label:"40 – 42 mm",   sub:"Modern default. Presence without tipping into novelty.", imgs:["size-40-42-0.jpg","size-40-42-1.jpg","size-40-42-2.jpg"]},
-    {v:"xl",label:"42 mm and up", sub:"Deliberately large. Big dial, long lugs, needs the wrist to carry it.", imgs:["size-42-plus-0.jpg","size-42-plus-1.jpg","size-42-plus-2.jpg"]}
+    {v:"s", label:"34 – 37 mm",   sub:"Vintage proportions. Reads as a watch, not as equipment.", imgs:["size-34-37-scale.svg"]},
+    {v:"m", label:"37 – 39.5 mm", sub:"The classic middle, where most of the best designs of the last 70 years live.", imgs:["size-37-39-scale.svg"]},
+    {v:"l", label:"40 – 42 mm",   sub:"Modern default. Presence without tipping into novelty.", imgs:["size-40-42-scale.svg"]},
+    {v:"xl",label:"42 mm and up", sub:"Deliberately large. Big dial, long lugs, needs the wrist to carry it.", imgs:["size-42-plus-scale.svg"]}
   ]},
 
 { id:"sh", rail:"Case", weight:2.5,
@@ -44,13 +44,13 @@ const STEPS = [
   kicker:"The ring around the crystal sets the tone of the whole watch. A rotating dive bezel and a fluted gold one can sit on the same case and read as completely different objects.",
   type:"image",
   options:[
-    {v:"dive",  label:"Rotating dive",  sub:"Sixty-minute scale with a lume pip at zero. Turns to time anything.", imgs:["bezel-dive-0.jpg","bezel-dive-1.jpg","bezel-dive-2.jpg"]},
-    {v:"smooth",label:"Smooth polished",sub:"A plain narrow ring. Lets the dial do the talking; dresses up and down.", imgs:["bezel-smooth-0.jpg","bezel-smooth-1.jpg","bezel-smooth-2.jpg"]},
-    {v:"none",  label:"Barely there",   sub:"Reduced to a hairline so the dial runs nearly edge to edge.", imgs:["bezel-slim-0.jpg","bezel-slim-1.jpg","bezel-slim-2.jpg"]},
+    {v:"dive",  label:"Rotating dive",  sub:"Sixty-minute scale with a lume pip at zero. Turns to time anything.", imgs:["bezel-dive-0.jpg"]},
+    {v:"smooth",label:"Smooth polished",sub:"A plain narrow ring. Lets the dial do the talking; dresses up and down.", imgs:["bezel-smooth-0.jpg"]},
+    {v:"none",  label:"Barely there",   sub:"Reduced to a hairline so the dial runs nearly edge to edge.", imgs:["bezel-slim-0.jpg"]},
     {v:"fluted",label:"Fluted",         sub:"Machined radial flutes, usually gold. Unapologetically formal, catches every light.", imgs:["bezel-fluted-0.jpg"]},
-    {v:"gmt",   label:"24-hour GMT",    sub:"Split two-tone ring numbered to 24. Day and night in two colours.", imgs:["bezel-gmt-0.jpg","bezel-gmt-1.jpg","bezel-gmt-2.jpg"]},
-    {v:"tachy", label:"Tachymeter",     sub:"Fixed scale for speed over distance. The chronograph's native habitat.", imgs:["bezel-tachymeter-0.jpg","bezel-tachymeter-1.jpg"]},
-    {v:"coin",  label:"Coin-edge / notched", sub:"Knurled and grippy, with pilot and compressor lineage.", imgs:["bezel-coin-edge-0.jpg","bezel-coin-edge-1.jpg","bezel-coin-edge-2.jpg"]}
+    {v:"gmt",   label:"24-hour GMT",    sub:"Split two-tone ring numbered to 24. Day and night in two colours.", imgs:["bezel-gmt-0.jpg"]},
+    {v:"tachy", label:"Tachymeter",     sub:"Fixed scale for speed over distance. The chronograph's native habitat.", imgs:["bezel-tachymeter-0.jpg"]},
+    {v:"coin",  label:"Coin-edge / notched", sub:"Knurled and grippy, with pilot and compressor lineage.", imgs:["bezel-coin-edge-0.jpg"]}
   ]},
 
 { id:"dc", rail:"Dial", weight:2,
@@ -58,11 +58,11 @@ const STEPS = [
   kicker:"Worth being honest rather than aspirational. Black and silver are easy forever; green and salmon are a mood you have to still be in two years from now.",
   type:"image",
   options:[
-    {v:"black",label:"Black",           sub:"Maximum contrast, maximum legibility, zero risk. The reference answer.", imgs:["dial-black-0.jpg","dial-black-1.jpg","dial-black-2.jpg"]},
-    {v:"white",label:"White or silver", sub:"Crisp and faintly instrumental. Reads dressier than black on the same case.", imgs:["dial-white-0.jpg","dial-white-1.jpg","dial-white-2.jpg"]},
-    {v:"blue", label:"Blue",            sub:"The modern crowd-pleaser. Navy behaves like black; brighter blues are a real choice.", imgs:["dial-blue-0.jpg","dial-blue-1.jpg","dial-blue-2.jpg"]},
-    {v:"green",label:"Green",           sub:"From near-black forest to full emerald. Unusual enough to register as taste.", imgs:["dial-green-0.jpg","dial-green-1.jpg"]},
-    {v:"warm", label:"Champagne or brown", sub:"Vintage warmth. Pairs with gold and brown leather, looks older than it is.", imgs:["dial-warm-0.jpg","dial-warm-1.jpg"]}
+    {v:"black",label:"Black",           sub:"Maximum contrast, maximum legibility, zero risk. The reference answer.", imgs:["dial-black-0.jpg"]},
+    {v:"white",label:"White or silver", sub:"Crisp and faintly instrumental. Reads dressier than black on the same case.", imgs:["dial-white-0.jpg"]},
+    {v:"blue", label:"Blue",            sub:"The modern crowd-pleaser. Navy behaves like black; brighter blues are a real choice.", imgs:["dial-blue-0.jpg"]},
+    {v:"green",label:"Green",           sub:"From near-black forest to full emerald. Unusual enough to register as taste.", imgs:["dial-green-0.jpg"]},
+    {v:"warm", label:"Champagne or brown", sub:"Vintage warmth. Pairs with gold and brown leather, looks older than it is.", imgs:["dial-warm-0.jpg"]}
   ]},
 
 { id:"ly", rail:"Layout", weight:2,
@@ -70,11 +70,11 @@ const STEPS = [
   kicker:"Everything you add is a small tax on legibility and a small gain in interest. A no-date dial is the purest layout in watchmaking and also the least useful.",
   type:"image",
   options:[
-    {v:"plain",  label:"Three hands, nothing else", sub:"No date, no window, perfect symmetry. The purist's answer.", imgs:["layout-three-hand-0.jpg","layout-three-hand-1.jpg","layout-three-hand-2.jpg"]},
-    {v:"date",   label:"Date window",               sub:"One aperture, usually at three. Mildly ruins the symmetry; you'll use it daily.", imgs:["layout-date-0.jpg","layout-date-1.jpg","layout-date-2.jpg"]},
-    {v:"chrono", label:"Chronograph",               sub:"Subdials and pushers on the case flank. Busy, mechanical, handsome.", imgs:["layout-chronograph-0.jpg","layout-chronograph-1.jpg","layout-chronograph-2.jpg"]},
-    {v:"gmt",    label:"Second time zone",          sub:"A fourth hand on a 24-hour track. The one complication travellers actually use.", imgs:["layout-gmt-0.jpg","layout-gmt-1.jpg"]},
-    {v:"digital",label:"Digital display",           sub:"LCD, no hands. Alarms, timers, indestructible. A different kind of honest.", imgs:["layout-digital-0.jpg","layout-digital-1.jpg"]}
+    {v:"plain",  label:"Three hands, nothing else", sub:"No date, no window, perfect symmetry. The purist's answer.", imgs:["layout-three-hand-0.jpg"]},
+    {v:"date",   label:"Date window",               sub:"One aperture, usually at three. Mildly ruins the symmetry; you'll use it daily.", imgs:["layout-date-0.jpg"]},
+    {v:"chrono", label:"Chronograph",               sub:"Subdials and pushers on the case flank. Busy, mechanical, handsome.", imgs:["layout-chronograph-0.jpg"]},
+    {v:"gmt",    label:"Second time zone",          sub:"A fourth hand on a 24-hour track. The one complication travellers actually use.", imgs:["layout-gmt-0.jpg"]},
+    {v:"digital",label:"Digital display",           sub:"LCD, no hands. Alarms, timers, indestructible. A different kind of honest.", imgs:["layout-digital-0.jpg"]}
   ]},
 
 { id:"ix", rail:"Markers", weight:2,
@@ -82,11 +82,11 @@ const STEPS = [
   kicker:"Markers and hands are the typography of a watch — the detail you stare at for years without naming it. This is where dress and tool really part ways.",
   type:"image",
   options:[
-    {v:"baton", label:"Applied batons",       sub:"Faceted steel sticks catching light at the edges. Clean and hard to dislike.", imgs:["markers-baton-0.jpg","markers-baton-1.jpg","markers-baton-2.jpg"]},
-    {v:"dots",  label:"Dive plots",           sub:"Round lume blocks, bars at the quarters, a triangle at twelve.", imgs:["markers-dive-plots-0.jpg","markers-dive-plots-1.jpg","markers-dive-plots-2.jpg"]},
-    {v:"arabic",label:"Arabic numerals",      sub:"Printed or applied numbers all the way round. Open, legible, slightly bookish.", imgs:["markers-arabic-0.jpg","markers-arabic-1.jpg","markers-arabic-2.jpg"]},
-    {v:"field", label:"Full field numbering", sub:"Every hour plus an inner 13–24 track. Maximum information, military lineage.", imgs:["markers-field-0.jpg","markers-field-1.jpg","markers-field-2.jpg"]},
-    {v:"roman", label:"Roman numerals",       sub:"Formal and unmistakably classical. The dressiest thing you can print on a dial.", imgs:["markers-roman-0.jpg","markers-roman-1.jpg"]}
+    {v:"baton", label:"Applied batons",       sub:"Faceted steel sticks catching light at the edges. Clean and hard to dislike.", imgs:["markers-baton-0.jpg"]},
+    {v:"dots",  label:"Dive plots",           sub:"Round lume blocks, bars at the quarters, a triangle at twelve.", imgs:["markers-dive-plots-0.jpg"]},
+    {v:"arabic",label:"Arabic numerals",      sub:"Printed or applied numbers all the way round. Open, legible, slightly bookish.", imgs:["markers-arabic-0.jpg"]},
+    {v:"field", label:"Full field numbering", sub:"Every hour plus an inner 13–24 track. Maximum information, military lineage.", imgs:["markers-field-0.jpg"]},
+    {v:"roman", label:"Roman numerals",       sub:"Formal and unmistakably classical. The dressiest thing you can print on a dial.", imgs:["markers-roman-0.jpg"]}
   ]},
 
 { id:"st", rail:"Bracelet", weight:2,
@@ -94,13 +94,13 @@ const STEPS = [
   kicker:"Changeable later, but it dictates how the watch feels more than anything except size — and a bracelet can be a quarter of what you paid.",
   type:"image",
   options:[
-    {v:"oyster",    label:"Three-link steel", sub:"Brushed, flat and sturdy. The everyday default; suits almost everything.", imgs:["strap-oyster-0.jpg","strap-oyster-1.jpg"]},
-    {v:"jubilee",   label:"Five-link steel",  sub:"Narrower polished centre links. Dressier, more fluid, slightly jewelry-ish.", imgs:["strap-jubilee-0.jpg","strap-jubilee-1.jpg"]},
-    {v:"integrated",label:"Integrated taper", sub:"Flows out of the case with no lug gap. Looks expensive; you can't swap it.", imgs:["strap-integrated-0.jpg","strap-integrated-1.jpg","strap-integrated-2.jpg"]},
-    {v:"leather",   label:"Leather",          sub:"Warm, light, quiet. Dresses anything up and wears out every couple of years.", imgs:["strap-leather-0.jpg","strap-leather-1.jpg"]},
-    {v:"nato",      label:"Fabric or NATO",   sub:"One pass-through strap, cheap to swap, nothing to scratch. Pure utility.", imgs:["strap-nato-0.jpg","strap-nato-1.jpg"]},
-    {v:"mesh",      label:"Milanese mesh",    sub:"Fine woven steel. Smooth on the wrist and infinitely adjustable.", imgs:["strap-mesh-0.jpg","strap-mesh-1.jpg"]},
-    {v:"rubber",    label:"Rubber",           sub:"Pool, shower, sweat, ocean. Modern rubber is genuinely nice, not a compromise.", imgs:["strap-rubber-0.jpg","strap-rubber-1.jpg"]}
+    {v:"oyster",    label:"Three-link steel", sub:"Brushed, flat and sturdy. The everyday default; suits almost everything.", imgs:["strap-oyster-0.jpg"]},
+    {v:"jubilee",   label:"Five-link steel",  sub:"Narrower polished centre links. Dressier, more fluid, slightly jewelry-ish.", imgs:["strap-jubilee-0.jpg"]},
+    {v:"integrated",label:"Integrated taper", sub:"Flows out of the case with no lug gap. Looks expensive; you can't swap it.", imgs:["strap-integrated-0.jpg"]},
+    {v:"leather",   label:"Leather",          sub:"Warm, light, quiet. Dresses anything up and wears out every couple of years.", imgs:["strap-leather-0.jpg"]},
+    {v:"nato",      label:"Fabric or NATO",   sub:"One pass-through strap, cheap to swap, nothing to scratch. Pure utility.", imgs:["strap-nato-0.jpg"]},
+    {v:"mesh",      label:"Milanese mesh",    sub:"Fine woven steel. Smooth on the wrist and infinitely adjustable.", imgs:["strap-mesh-0.jpg"]},
+    {v:"rubber",    label:"Rubber",           sub:"Pool, shower, sweat, ocean. Modern rubber is genuinely nice, not a compromise.", imgs:["strap-rubber-0.jpg"]}
   ]},
 
 { id:"mv", rail:"Movement", weight:3,
@@ -244,34 +244,10 @@ const CREDITS = [
   "page": "https://commons.wikimedia.org/wiki/File:Hamilton_Khaki_Field_Team_Earth_Harrison_Ford_(strong_crop_plus_perspective_correction).jpg"
  },
  {
-  "title": "Breitling Navitimer 806 E last version.jpg",
-  "author": "PAPPL",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Breitling_Navitimer_806_E_last_version.jpg"
- },
- {
-  "title": "Audemars Piguet Royal Oak ref. 15202.jpg",
-  "author": "OpaleHorse",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Audemars_Piguet_Royal_Oak_ref._15202.jpg"
- },
- {
   "title": "Rolex-Submariner.jpg",
   "author": "FrankWilliams",
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Rolex-Submariner.jpg"
- },
- {
-  "title": "Tudor Pelagos for Carolina Watch Club Limited Edition.jpg",
-  "author": "OpaleHorse",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Tudor_Pelagos_for_Carolina_Watch_Club_Limited_Edition.jpg"
- },
- {
-  "title": "ORIENT New Mako Automatic 200M Diver's CEM75001B. (5921299415).jpg",
-  "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-  "license": "CC BY 2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:ORIENT_New_Mako_Automatic_200M_Diver%27s_CEM75001B._(5921299415).jpg"
  },
  {
   "title": "Rolex Datejust 126234.jpg",
@@ -286,34 +262,10 @@ const CREDITS = [
   "page": "https://commons.wikimedia.org/wiki/File:Rolex_GMT_Master_II_116710BLNR_Batman.jpg"
  },
  {
-  "title": "Longines Spirit Zulu Time.jpg",
-  "author": "Clyde94",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Longines_Spirit_Zulu_Time.jpg"
- },
- {
-  "title": "Timex Q Reissue ref. TW2V32100.jpg",
-  "author": "EMore98",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Timex_Q_Reissue_ref._TW2V32100.jpg"
- },
- {
   "title": "Junghans Max Bill Uhr.jpg",
   "author": "Uhrenfabrik Junghans",
   "license": "CC0",
   "page": "https://commons.wikimedia.org/wiki/File:Junghans_Max_Bill_Uhr.jpg"
- },
- {
-  "title": "Nomos Glashütte Tangente neomatik 41 Update.jpg",
-  "author": "Berlinerblau",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Nomos_Glash%C3%BCtte_Tangente_neomatik_41_Update.jpg"
- },
- {
-  "title": "Hamilton Khaki Field.jpg",
-  "author": "EMore98",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Hamilton_Khaki_Field.jpg"
  },
  {
   "title": "Omega Seamaster Aqua Terra realizzato per commemorare le olimpiadi di Tokyo 2020.jpg",
@@ -322,28 +274,10 @@ const CREDITS = [
   "page": "https://commons.wikimedia.org/wiki/File:Omega_Seamaster_Aqua_Terra_realizzato_per_commemorare_le_olimpiadi_di_Tokyo_2020.jpg"
  },
  {
-  "title": "SINN (30468374062).jpg",
-  "author": "Daniel Zimmermann from Bayern, Deutschland (Germany)",
-  "license": "CC BY 2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:SINN_(30468374062).jpg"
- },
- {
-  "title": "152-rolex-explorer-ref-14270-circa-2001-mostra-store-aix-montres-vintage.jpg",
-  "author": "Thierry Mostra-store",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:152-rolex-explorer-ref-14270-circa-2001-mostra-store-aix-montres-vintage.jpg"
- },
- {
   "title": "Classic Speedy (24067321725).jpg",
   "author": "Daniel Zimmermann from Bayern, Deutschland (Germany)",
   "license": "CC BY 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Classic_Speedy_(24067321725).jpg"
- },
- {
-  "title": "Bulova Lunar Pilot.jpg",
-  "author": "Clyde94",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Bulova_Lunar_Pilot.jpg"
  },
  {
   "title": "PANERAI (29802698304).jpg",
@@ -356,6 +290,12 @@ const CREDITS = [
   "author": "Md. Rifat Hasan Jihan",
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:CASIO_G-Shock_GW-M5610U.jpg"
+ },
+ {
+  "title": "Audemars Piguet Royal Oak ref. 15202.jpg",
+  "author": "OpaleHorse",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Audemars_Piguet_Royal_Oak_ref._15202.jpg"
  },
  {
   "title": "Tissot PRX 35mm.jpg",
@@ -388,46 +328,70 @@ const CREDITS = [
   "page": "https://commons.wikimedia.org/wiki/File:Casio_F-91W_watch_(2023)_(front_closeup_-_time)_(minor_retouch).jpg"
  },
  {
+  "title": "152-rolex-explorer-ref-14270-circa-2001-mostra-store-aix-montres-vintage.jpg",
+  "author": "Thierry Mostra-store",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:152-rolex-explorer-ref-14270-circa-2001-mostra-store-aix-montres-vintage.jpg"
+ },
+ {
+  "title": "SINN (30468374062).jpg",
+  "author": "Daniel Zimmermann from Bayern, Deutschland (Germany)",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:SINN_(30468374062).jpg"
+ },
+ {
+  "title": "ORIENT New Mako Automatic 200M Diver's CEM75001B. (5921299415).jpg",
+  "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:ORIENT_New_Mako_Automatic_200M_Diver%27s_CEM75001B._(5921299415).jpg"
+ },
+ {
+  "title": "Tudor Pelagos for Carolina Watch Club Limited Edition.jpg",
+  "author": "OpaleHorse",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tudor_Pelagos_for_Carolina_Watch_Club_Limited_Edition.jpg"
+ },
+ {
   "title": "Wikipedia-DE-Longines-Legend-Diver-Bronze-1024.jpg",
   "author": "Minzoblate",
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Wikipedia-DE-Longines-Legend-Diver-Bronze-1024.jpg"
  },
  {
-  "title": "Seiko Prospex Alpinist01bs.jpg",
-  "author": "663highland",
-  "license": "CC BY 2.5",
-  "page": "https://commons.wikimedia.org/wiki/File:Seiko_Prospex_Alpinist01bs.jpg"
- },
- {
-  "title": "Breitling Premier 1950th.png",
-  "author": "Ｔｏｍ",
-  "license": "FAL",
-  "page": "https://commons.wikimedia.org/wiki/File:Breitling_Premier_1950th.png"
- },
- {
-  "title": "Laco Faro B-Muster, designed after Beobachtungsuhr Fliegeruhr Pilotenuhr of WWII (cropped to casing).jpg",
-  "author": "Chrononautix",
+  "title": "Nomos Glashütte Tangente neomatik 41 Update.jpg",
+  "author": "Berlinerblau",
   "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Laco_Faro_B-Muster,_designed_after_Beobachtungsuhr_Fliegeruhr_Pilotenuhr_of_WWII_(cropped_to_casing).jpg"
+  "page": "https://commons.wikimedia.org/wiki/File:Nomos_Glash%C3%BCtte_Tangente_neomatik_41_Update.jpg"
  },
  {
-  "title": "TAG Heuer Carrera Calibre 5, anni 2010.jpg",
-  "author": "Clyde94",
+  "title": "Hamilton Khaki Field.jpg",
+  "author": "EMore98",
   "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:TAG_Heuer_Carrera_Calibre_5,_anni_2010.jpg"
+  "page": "https://commons.wikimedia.org/wiki/File:Hamilton_Khaki_Field.jpg"
  },
  {
-  "title": "Citizen Promaster Eco-Drive AP0440-14F Diver's 200 m (edited, cropped to casing).jpg",
-  "author": "File:Citizen Promaster Eco-Drive AP0440-14F Diver's 200 m on a 4-ring NATO style strap.JPG: Francis Flinch\nderivative work: Pittigrilli",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Citizen_Promaster_Eco-Drive_AP0440-14F_Diver%27s_200_m_(edited,_cropped_to_casing).jpg"
+  "title": "Scale diagram — 34 – 37 mm on a 7-inch wrist",
+  "author": "Drawn for this page",
+  "license": "No attribution required",
+  "page": ""
  },
  {
-  "title": "Seiko SNK809.jpg",
-  "author": "Soulreaper",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Seiko_SNK809.jpg"
+  "title": "Scale diagram — 37 – 39.5 mm on a 7-inch wrist",
+  "author": "Drawn for this page",
+  "license": "No attribution required",
+  "page": ""
+ },
+ {
+  "title": "Scale diagram — 40 – 42 mm on a 7-inch wrist",
+  "author": "Drawn for this page",
+  "license": "No attribution required",
+  "page": ""
+ },
+ {
+  "title": "Scale diagram — 42 mm and up on a 7-inch wrist",
+  "author": "Drawn for this page",
+  "license": "No attribution required",
+  "page": ""
  },
  {
   "title": "Rolex-GMT-Master-II-Batgirl.jpg",
@@ -436,22 +400,10 @@ const CREDITS = [
   "page": "https://commons.wikimedia.org/wiki/File:Rolex-GMT-Master-II-Batgirl.jpg"
  },
  {
-  "title": "Seiko SKX007k.jpg",
-  "author": "Tyisnttheanswer",
-  "license": "CC BY-SA 3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Seiko_SKX007k.jpg"
- },
- {
   "title": "Viscount Alligator blau.jpg",
   "author": "Hirsch Armbänder GmbH",
   "license": "CC BY-SA 3.0",
   "page": "https://commons.wikimedia.org/wiki/File:Viscount_Alligator_blau.jpg"
- },
- {
-  "title": "Pilot watch on a bund strap.jpg",
-  "author": "AfterMinute",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Pilot_watch_on_a_bund_strap.jpg"
  },
  {
   "title": "Citizen Promaster Eco-Drive BJ8050-08E Diver's 300 m with stainless steel shark mesh bracelet.jpg",
@@ -460,22 +412,10 @@ const CREDITS = [
   "page": "https://commons.wikimedia.org/wiki/File:Citizen_Promaster_Eco-Drive_BJ8050-08E_Diver%27s_300_m_with_stainless_steel_shark_mesh_bracelet.jpg"
  },
  {
-  "title": "Stainless steel shark mesh bracelet.jpg",
-  "author": "Cohiba Jack",
-  "license": "CC BY 2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Stainless_steel_shark_mesh_bracelet.jpg"
- },
- {
   "title": "Qimei watch on Zulu strap.jpg",
   "author": "Francis Flinch",
   "license": "CC0",
   "page": "https://commons.wikimedia.org/wiki/File:Qimei_watch_on_Zulu_strap.jpg"
- },
- {
-  "title": "Citizen Promaster Eco-Drive AP0440-14F Diver's 200 m on a 4-ring NATO style strap (edited, on white).JPG",
-  "author": "File:Citizen Promaster Eco-Drive AP0440-14F Diver's 200 m on a 4-ring NATO style strap.JPG: Francis Flinch\nderivative work: Pittigrilli",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Citizen_Promaster_Eco-Drive_AP0440-14F_Diver%27s_200_m_on_a_4-ring_NATO_style_strap_(edited,_on_white).JPG"
  },
  {
   "title": "Rolex Deepsea Sea-Dweller 116660 Blue Dial 'James Cameron'.jpg",
@@ -484,22 +424,28 @@ const CREDITS = [
   "page": "https://commons.wikimedia.org/wiki/File:Rolex_Deepsea_Sea-Dweller_116660_Blue_Dial_%27James_Cameron%27.jpg"
  },
  {
-  "title": "Rolex Deepsea Sea-Dweller 116660 Blue Dial 'James Cameron' (without background, upright).jpg",
-  "author": "File:Rolex Deepsea Sea-Dweller 116660 Blue Dial 'James Cameron'.jpg: amh1988\nderivative work: Pittigrilli",
-  "license": "CC0",
-  "page": "https://commons.wikimedia.org/wiki/File:Rolex_Deepsea_Sea-Dweller_116660_Blue_Dial_%27James_Cameron%27_(without_background,_upright).jpg"
- },
- {
   "title": "Citizen Eco-Drive Diver's 200m - Diving watch (cropped to watch casing).jpg",
   "author": "Pittigrilli",
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Citizen_Eco-Drive_Diver%27s_200m_-_Diving_watch_(cropped_to_watch_casing).jpg"
  },
  {
-  "title": "Dive table on the rubber bracelet of a Citizen Diving watch.jpg",
-  "author": "Pittigrilli",
+  "title": "Breitling Navitimer 806 E last version.jpg",
+  "author": "PAPPL",
   "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Dive_table_on_the_rubber_bracelet_of_a_Citizen_Diving_watch.jpg"
+  "page": "https://commons.wikimedia.org/wiki/File:Breitling_Navitimer_806_E_last_version.jpg"
+ },
+ {
+  "title": "Bulova Lunar Pilot.jpg",
+  "author": "Clyde94",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Bulova_Lunar_Pilot.jpg"
+ },
+ {
+  "title": "Citizen Promaster Eco-Drive AP0440-14F Diver's 200 m (edited, cropped to casing).jpg",
+  "author": "File:Citizen Promaster Eco-Drive AP0440-14F Diver's 200 m on a 4-ring NATO style strap.JPG: Francis Flinch\nderivative work: Pittigrilli",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Citizen_Promaster_Eco-Drive_AP0440-14F_Diver%27s_200_m_(edited,_cropped_to_casing).jpg"
  },
  {
   "title": "Blancpain.jpg",
@@ -514,6 +460,18 @@ const CREDITS = [
   "page": "https://commons.wikimedia.org/wiki/File:Grand_Seiko_SBGA011.jpg"
  },
  {
+  "title": "Laco Faro B-Muster, designed after Beobachtungsuhr Fliegeruhr Pilotenuhr of WWII (cropped to casing).jpg",
+  "author": "Chrononautix",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Laco_Faro_B-Muster,_designed_after_Beobachtungsuhr_Fliegeruhr_Pilotenuhr_of_WWII_(cropped_to_casing).jpg"
+ },
+ {
+  "title": "Longines Spirit Zulu Time.jpg",
+  "author": "Clyde94",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Longines_Spirit_Zulu_Time.jpg"
+ },
+ {
   "title": "Mondaine Classic A669.30008.16SBO watch.jpg",
   "author": "DimiTalen",
   "license": "CC0",
@@ -524,6 +482,30 @@ const CREDITS = [
   "author": "Rechteinhaber: Oris\n\nFotograf: Olaf Köster",
   "license": "CC BY-SA 3.0 de",
   "page": "https://commons.wikimedia.org/wiki/File:Oris_Aquis_Depth_Gauge.jpeg"
+ },
+ {
+  "title": "Seiko Prospex Alpinist01bs.jpg",
+  "author": "663highland",
+  "license": "CC BY 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Seiko_Prospex_Alpinist01bs.jpg"
+ },
+ {
+  "title": "Seiko SNK809.jpg",
+  "author": "Soulreaper",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seiko_SNK809.jpg"
+ },
+ {
+  "title": "TAG Heuer Carrera Calibre 5, anni 2010.jpg",
+  "author": "Clyde94",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:TAG_Heuer_Carrera_Calibre_5,_anni_2010.jpg"
+ },
+ {
+  "title": "Timex Q Reissue ref. TW2V32100.jpg",
+  "author": "EMore98",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Timex_Q_Reissue_ref._TW2V32100.jpg"
  },
  {
   "title": "Tissot PRX collection one 23 January 2025 Philippines7.jpg",

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 400" width="420" height="400" role="img" aria-label="40 – 42 mm case shown to scale on a 7 inch wrist, with 34 mm and 44 mm marked for comparison">
+  <rect x="56.0" y="4" width="308.0" height="344" rx="26"
+        fill="#8e8e8e" fill-opacity=".13" stroke="#8e8e8e" stroke-opacity=".45" stroke-width="1.5"/>
+  <text x="210.0" y="28" text-anchor="middle" font-family="ui-monospace,Menlo,monospace"
+        font-size="11.5" fill="#8e8e8e" letter-spacing="1.5">7-INCH WRIST</text>
+  <rect x="157.2" y="4" width="105.6" height="344" fill="#737b83" fill-opacity=".5"/>
+  <circle cx="210.0" cy="190.0" r="95.2" fill="none" stroke="#8e8e8e" stroke-opacity=".55" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="310.2" y="98.8" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#8e8e8e" fill-opacity=".8">34</text>
+  <circle cx="210.0" cy="190.0" r="123.2" fill="none" stroke="#8e8e8e" stroke-opacity=".55" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="338.2" y="70.8" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#8e8e8e" fill-opacity=".8">44</text>
+  <circle cx="210.0" cy="190.0" r="114.8" fill="#c3cad1" stroke="#6b747c" stroke-width="2"/>
+  <circle cx="210.0" cy="190.0" r="90.7" fill="#262c32"/>
+  <line x1="210.0" y1="190.0" x2="210.0" y2="132.6" stroke="#eef2f5" stroke-width="3.2" stroke-linecap="round"/>
+  <line x1="210.0" y1="190.0" x2="253.6" y2="214.1" stroke="#eef2f5" stroke-width="3.2" stroke-linecap="round"/>
+  <circle cx="210.0" cy="190.0" r="2.4" fill="#eef2f5"/>
+  <line x1="95.2" y1="319.8" x2="324.8" y2="319.8" stroke="#9aa4ad" stroke-width="1.2"/>
+  <line x1="95.2" y1="314.8" x2="95.2" y2="324.8" stroke="#9aa4ad" stroke-width="1.2"/>
+  <line x1="324.8" y1="314.8" x2="324.8" y2="324.8" stroke="#9aa4ad" stroke-width="1.2"/>
+  <text x="210.0" y="384" text-anchor="middle" font-family="ui-monospace,Menlo,monospace"
+        font-size="15" fill="#9aa4ad" letter-spacing="1.1">40 – 42 mm</text>
+  <text x="210.0" y="398" text-anchor="middle" font-family="ui-monospace,Menlo,monospace"
+        font-size="10" fill="#8e8e8e" fill-opacity=".85" letter-spacing=".6">dashed = 34 mm and 44 mm, to scale</text>
+</svg>
