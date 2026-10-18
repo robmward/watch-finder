@@ -506,6 +506,13 @@ button{font:inherit; color:inherit;}
 .credits a:hover{color:var(--lume);}
 .credits span{color:var(--radium);}
 
+/* grid/flex children need min-width:0 or long values push the layout wider
+   than the viewport instead of wrapping */
+.plate-info, .rung-body, .buy, .stage, .who{min-width:0;}
+.specs li{flex-wrap:wrap;}
+.specs .v{overflow-wrap:anywhere;}
+.runners .who b{overflow-wrap:anywhere;}
+
 /* ---------- phone ---------- */
 @media (max-width:620px){
   .shell{padding:18px 14px 56px;}

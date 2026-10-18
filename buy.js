@@ -10,6 +10,8 @@
 
 /* How a given watch is actually sold. Defaults to brand tier; the slugs
    listed here are exceptions where the tier would mislead. */
+(function(){
+"use strict";
 const RETAIL_OVERRIDE = {
   "seiko-snk809":    "discontinued", // long out of production; grey/used only
   "vostok-amphibia": "specialist",   // no US retail presence; importers + used
@@ -153,3 +155,6 @@ function renderBuy(w, mount){
   // Show the non-local groups immediately; a ZIP only adds the "near you" block.
   draw(/^\d{5}$/.test(saved) ? saved : null);
 }
+
+window.renderBuy = renderBuy;
+})();

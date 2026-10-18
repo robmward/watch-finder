@@ -7,6 +7,8 @@
    imply that we do.
    ================================================================== */
 
+(function(){
+"use strict";
 const PRICE_API = "/api/prices";
 const priceCache = new Map();
 
@@ -85,3 +87,6 @@ async function renderPrices(w, mount){
   }
   box.innerHTML = chart(data.stats, w.p);
 }
+
+window.renderPrices = renderPrices;
+})();
