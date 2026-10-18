@@ -445,6 +445,15 @@ button{font:inherit; color:inherit;}
 .buy-links{display:flex; flex-wrap:wrap; gap:8px;}
 .buy-links .btn{text-decoration:none;}
 
+/* ---------- share ---------- */
+.share{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:-2px 0 4px;}
+.share .btn{padding:10px 18px;}
+.share-msg{font-family:var(--mono); font-size:.68rem; color:var(--lume);}
+@media (max-width:620px){
+  .share{margin-top:4px;}
+  .share .btn{flex:1 1 100%; text-align:center; padding:13px 18px;}
+}
+
 /* ---------- asking-price chart ---------- */
 .pchart-loading{margin:0; font-family:var(--mono); font-size:.7rem; color:var(--ink-3);}
 .pchart-track{
@@ -912,6 +921,10 @@ function finish(){
     <div class="result-head">
       <span class="q-step num">Result · ${br.label} · scored against ${scored.length} watches</span>
       <h2 class="verdict"><small>Built from your spec sheet, not from a logo:</small>${main.w.b} ${main.w.n}</h2>
+      <div class="share">
+        <button type="button" class="btn btn-primary" id="shareBtn" data-slug="${main.w.s}">Share this result</button>
+        <span class="share-msg" id="shareMsg" role="status"></span>
+      </div>
     </div>
 
     ${plate(main)}
@@ -975,8 +988,8 @@ function finish(){
   window.scrollTo({top:0, behavior:"smooth"});
 
   lastMain = main.w;
-  renderPrices(main.w, document.getElementById("priceMount"));
-  renderBuy(main.w, document.getElementById("buyMount"));
+  window.renderPrices(main.w, document.getElementById("priceMount"));
+  window.renderBuy(main.w, document.getElementById("buyMount"));
 
   /* Keep the finished results so a detour into a watch's own page can come
      straight back to them without re-running the quiz. */
@@ -1009,29 +1022,65 @@ function wireResults(){
   el.results.querySelectorAll(".rung-go, .runner-go").forEach(b => {
     b.addEventListener("click", () => showDetail(b.dataset.slug));
   });
+  wireShare();
   const buyMount = document.getElementById("buyMount");
-  if(buyMount && lastMain) renderBuy(lastMain, buyMount);
+  if(buyMount && lastMain) window.renderBuy(lastMain, buyMount);
   const pm = document.getElementById("priceMount");
-  if(pm && lastMain) renderPrices(lastMain, pm);
+  if(pm && lastMain) window.renderPrices(lastMain, pm);
+}
+
+/* ---------- sharing ----------
+   The link carries the watch, so whoever opens it lands on that watch rather
+   than at the start of an eleven-question quiz. */
+function shareURL(slug){
+  return location.origin + location.pathname + "#w=" + encodeURIComponent(slug);
+}
+
+function wireShare(){
+  const btn = document.getElementById("shareBtn");
+  if(!btn) return;
+  const msg = document.getElementById("shareMsg");
+  btn.addEventListener("click", async () => {
+    const w = WATCHES.find(x => x.s === btn.dataset.slug);
+    if(!w) return;
+    const url  = shareURL(w.s);
+    const text = `Bezel First picked me the ${w.b} ${w.n} — ${w.sp[0]}, ${money(w.p)}.`;
+    try{
+      if(navigator.share){
+        await navigator.share({ title:"Bezel First", text, url });
+        return;                                   // the sheet is its own feedback
+      }
+      await navigator.clipboard.writeText(`${text} ${url}`);
+      if(msg) msg.textContent = "Copied — paste it into a message.";
+    }catch(err){
+      // a cancelled share sheet throws AbortError; that is not a failure
+      if(err && err.name === "AbortError") return;
+      if(msg) msg.textContent = "Couldn't share — copy the address bar instead.";
+    }
+    if(msg) setTimeout(() => { msg.textContent = ""; }, 4000);
+  });
 }
 
 /* ---------- a watch's own page ---------- */
 function showDetail(slug){
   const w = WATCHES.find(x => x.s === slug);
   if(!w) return;
-  const inYourBracket = BRACKETS[answers.price];
-  const rel = inYourBracket
-    ? (w.p > inYourBracket.max ? "above" : w.p < inYourBracket.min ? "below" : "within")
-    : "within";
-  const relCopy = {
-    above: `This sits above the ${inYourBracket && inYourBracket.label} you picked. What the extra money buys is below.`,
-    below: `This sits below the ${inYourBracket && inYourBracket.label} you picked — the argument for spending less.`,
-    within:`This is inside the ${inYourBracket && inYourBracket.label} you picked.`
-  }[rel];
+  const band = BRACKETS[answers.price];
+  let relCopy;
+  if(!band){
+    // arrived from a shared link rather than from a finished quiz
+    relCopy = "Someone's match from Bezel First.";
+  } else if(w.p > band.max){
+    relCopy = `This sits above the ${band.label} you picked. What the extra money buys is below.`;
+  } else if(w.p < band.min){
+    relCopy = `This sits below the ${band.label} you picked — the argument for spending less.`;
+  } else {
+    relCopy = `This is inside the ${band.label} you picked.`;
+  }
 
   el.results.innerHTML = `
     <div class="nav" style="margin:0 0 24px; padding:0; border:none">
-      <button class="btn" id="backToResults" type="button">← Back to your match</button>
+      <button class="btn" id="backToResults" type="button">${resultsHTML ? "← Back to your match" : "Find my own watch →"}</button>
     </div>
     <div class="result-head">
       <span class="q-step num">${w.b}</span>
@@ -1058,11 +1107,21 @@ function showDetail(slug){
     <div id="priceMount"></div>
     <div id="buyMount"></div>`;
 
-  renderPrices(w, document.getElementById("priceMount"));
-  renderBuy(w, document.getElementById("buyMount"));
+  el.stage.classList.add("hidden");
+  el.results.classList.remove("hidden");
+  window.renderPrices(w, document.getElementById("priceMount"));
+  window.renderBuy(w, document.getElementById("buyMount"));
   document.getElementById("backToResults").addEventListener("click", () => {
-    el.results.innerHTML = resultsHTML;
-    wireResults();
+    if(resultsHTML){
+      el.results.innerHTML = resultsHTML;
+      wireResults();
+    } else {
+      history.replaceState(null, "", location.pathname);
+      idx = 0;
+      el.results.classList.add("hidden");
+      el.stage.classList.remove("hidden");
+      renderStep();
+    }
     window.scrollTo({top:0, behavior:"smooth"});
   });
   window.scrollTo({top:0, behavior:"smooth"});
@@ -1076,7 +1135,17 @@ document.getElementById("themeBtn").addEventListener("click", () => {
   document.documentElement.setAttribute("data-theme", now === "dark" ? "light" : "dark");
 });
 
-renderStep();
+/* A shared link opens that watch directly. */
+function boot(){
+  const m = /[#&]w=([a-z0-9-]+)/i.exec(location.hash || "");
+  if(m && WATCHES.some(w => w.s === m[1])){
+    renderStep();              // keep the quiz primed behind the detail view
+    showDetail(m[1]);
+    return;
+  }
+  renderStep();
+}
+boot();
 </script>
 </body>
 </html>
