@@ -46,16 +46,18 @@ Field keys: `sz` size, `sh` case shape, `bz` bezel, `dc` dial colour,
 `bt` brand tier, `sp` spec lines, `w` the write-up.
 
 Every option in a question needs at least one watch that matches it, or that
-option can never win. There's a validator for this in the commit history.
+option can never win. `node validate.js` checks that, plus price-bracket
+coverage, photo attribution, and the real scoring engine lifted out of
+`index.html`. Run it before deploying.
 
 ## Photographs
 
-All 40 photographs come from Wikimedia Commons under CC0, CC BY, CC BY-SA or
+All 86 photographs come from Wikimedia Commons under CC0, CC BY, CC BY-SA or
 public domain, and each was checked by eye against the watch it claims to
 show. Attribution renders at the bottom of the results page and in
 `CREDITS.md`, as those licences require.
 
-The catalogue is 37 watches rather than the ~70 originally drafted, because
+The catalogue is 38 watches rather than the ~70 originally drafted, because
 openly-licensed photos simply don't exist for most enthusiast and micro-brands
 (Christopher Ward, Baltic, Lorier, Nodus, Monta, Doxa, Nivada and others were
 cut rather than illustrated with the wrong watch).
