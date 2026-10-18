@@ -485,34 +485,34 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Cartier_Tank_Must_XL_automatico.jpg"
  },
- "size-34-37-scale.svg": {
-  "title": "Scale diagram — 34 – 37 mm on a 7-inch wrist",
-  "author": "Drawn for this page",
-  "license": "No attribution required",
-  "page": ""
- },
- "size-37-39-scale.svg": {
-  "title": "Scale diagram — 37 – 39.5 mm on a 7-inch wrist",
-  "author": "Drawn for this page",
-  "license": "No attribution required",
-  "page": ""
- },
- "size-40-42-scale.svg": {
-  "title": "Scale diagram — 40 – 42 mm on a 7-inch wrist",
-  "author": "Drawn for this page",
-  "license": "No attribution required",
-  "page": ""
- },
- "size-42-plus-scale.svg": {
-  "title": "Scale diagram — 42 mm and up on a 7-inch wrist",
-  "author": "Drawn for this page",
-  "license": "No attribution required",
-  "page": ""
- },
  "watch-breitling-premier.webp": {
   "title": "Breitling Premier 1950th.png",
   "author": "Ｔｏｍ",
   "license": "FAL",
   "page": "https://commons.wikimedia.org/wiki/File:Breitling_Premier_1950th.png"
+ },
+ "size-34-37.webp": {
+  "title": "Seiko SNK809.jpg",
+  "author": "Soulreaper",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seiko_SNK809.jpg"
+ },
+ "size-37-39.webp": {
+  "title": "Audemars Piguet Royal Oak ref. 15202.jpg",
+  "author": "OpaleHorse",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Audemars_Piguet_Royal_Oak_ref._15202.jpg"
+ },
+ "size-40-42.webp": {
+  "title": "Rolex GMT Master II 116710BLNR Batman.jpg",
+  "author": "gabihil",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Rolex_GMT_Master_II_116710BLNR_Batman.jpg"
+ },
+ "size-42-plus.webp": {
+  "title": "Bulova Lunar Pilot.jpg",
+  "author": "Clyde94",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Bulova_Lunar_Pilot.jpg"
  }
 }

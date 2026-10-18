@@ -19,13 +19,13 @@ const STEPS = [
 
 { id:"sz", rail:"Size", weight:2,
   title:"How much wrist does it get to use?",
-  kicker:"Everyone quotes case width, but lug-to-lug decides whether it actually sits right. Pick what looks correct to you — your eye is the instrument.",
+  kicker:"Each of these is a real watch on a real wrist at the size stated. They are different wrists and different cameras, so compare the watch against the wrist it sits on rather than against the photo next to it.",
   type:"image",
   options:[
-    {v:"s", label:"34 – 37 mm",   sub:"Vintage proportions. Reads as a watch, not as equipment.", imgs:["size-34-37-scale.svg"]},
-    {v:"m", label:"37 – 39.5 mm", sub:"The classic middle, where most of the best designs of the last 70 years live.", imgs:["size-37-39-scale.svg"]},
-    {v:"l", label:"40 – 42 mm",   sub:"Modern default. Presence without tipping into novelty.", imgs:["size-40-42-scale.svg"]},
-    {v:"xl",label:"42 mm and up", sub:"Deliberately large. Big dial, long lugs, needs the wrist to carry it.", imgs:["size-42-plus-scale.svg"]}
+    {v:"s", label:"34 – 37 mm",   sub:"Vintage proportions. Reads as a watch, not as equipment.", imgs:["size-34-37.webp"]},
+    {v:"m", label:"37 – 39.5 mm", sub:"The classic middle, where most of the best designs of the last 70 years live.", imgs:["size-37-39.webp"]},
+    {v:"l", label:"40 – 42 mm",   sub:"Modern default. Presence without tipping into novelty.", imgs:["size-40-42.webp"]},
+    {v:"xl",label:"42 mm and up", sub:"Deliberately large. Big dial, long lugs, needs the wrist to carry it.", imgs:["size-42-plus.webp"]}
   ]},
 
 { id:"sh", rail:"Case", weight:2.5,
@@ -167,7 +167,7 @@ const WATCHES = [
  sp:["41.5 mm","200 m","Orient automatic"],w:"Two hundred metres, a hacking automatic and a steel bracelet for the price of a decent pair of boots. The mineral crystal is the one real compromise, and it is the reason the rest of the watch can cost this little."},
 {s:"citizen-promaster",n:"Promaster Diver",b:"Citizen",p:325,sz:"xl",sh:"round",bz:"dive",dc:"black",ly:"date",ix:"dots",st:["nato","rubber"],mv:"solar",vb:["tool"],bt:"house",
  sp:["44 mm","200 m ISO","Eco-Drive solar"],w:"ISO-rated and solar-powered, so it never needs winding and almost never needs service. The cell is rechargeable rather than eternal — budget for a replacement somewhere past the fifteen-year mark."},
-{s:"mondaine-railways",n:"Official Swiss Railways",b:"Mondaine",p:350,sz:"l",sh:"round",bz:"none",dc:"white",ly:"date",ix:"baton",st:["leather"],mv:"quartz",vb:["dress","statement"],bt:"house",
+{s:"mondaine-railways",n:"Official Swiss Railways",b:"Mondaine",p:350,sz:"l",sh:"round",bz:"none",dc:"white",ly:"date",ix:"baton",st:["leather","mesh"],mv:"quartz",vb:["dress","statement"],bt:"house",
  sp:["40 mm","Hilfiker dial","Quartz"],w:"Hans Hilfiker's 1944 station clock shrunk onto a wrist. The red seconds paddle that everyone remembers was actually a 1953 addition, and it remains one of the few dials that is genuinely a piece of graphic-design history."},
 {s:"bulova-lunar-pilot",n:"Lunar Pilot",b:"Bulova",p:495,sz:"xl",sh:"round",bz:"tachy",dc:"black",ly:"chrono",ix:"baton",st:["nato","leather","oyster"],mv:"quartz",vb:["statement","tool"],bt:"house",
  sp:["43.5 mm","262 kHz quartz","Chronograph"],w:"Dave Scott wore a Bulova chronograph on the surface during Apollo 15 — a mechanical prototype, where this is a modern quartz reinterpretation of the design. Enormous, accurate to a fraction of a second, and completely justified."},
@@ -175,8 +175,8 @@ const WATCHES = [
  sp:["42 mm","Type-B flieger dial","Automatic"],w:"The German pilot dial in its B-Muster form: minutes round the outside, hours on a smaller inner ring, and a triangle at twelve. Laco were one of the five firms making these for the Luftwaffe in the 1940s, which is more than most reissues can claim."},
 {s:"hamilton-khaki-mech",n:"Khaki Field Mechanical",b:"Hamilton",p:550,sz:"m",sh:"round",bz:"none",dc:"black",ly:"plain",ix:"field",st:["nato"],mv:"hand",vb:["tool"],bt:"house",
  sp:["38 mm","50 m","Hand-wound H-50 · 80 h"],w:"A direct descendant of the US military field watch, hand-wound with an eighty-hour reserve. Thirty-eight millimetres, no date, no nonsense — arguably the best 500-dollar watch made."},
-{s:"tissot-prx-auto",n:"PRX Powermatic 80",b:"Tissot",p:725,sz:"l",sh:"integrated",bz:"smooth",dc:"black",ly:"date",ix:"baton",st:["integrated"],mv:"auto",vb:["one","dress"],bt:"house",
- sp:["40 mm","100 m","Powermatic 80 · 80 h"],w:"The watch that restarted the integrated-bracelet craze. An eighty-hour Swiss automatic behind a waffle-textured dial, with a bracelet that genuinely feels machined, for the price of a decent coat."},
+{s:"tissot-prx-auto",n:"PRX Powermatic 80 35",b:"Tissot",p:695,sz:"s",sh:"integrated",bz:"smooth",dc:"black",ly:"date",ix:"baton",st:["integrated"],mv:"auto",vb:["one","dress"],bt:"house",
+ sp:["35 mm","100 m","Powermatic 80 · 80 h"],w:"The watch that restarted the integrated-bracelet craze. An eighty-hour Swiss automatic behind a waffle-textured dial, with a bracelet that genuinely feels machined, for the price of a decent coat."},
 {s:"hamilton-khaki-auto",n:"Khaki Field Auto",b:"Hamilton",p:745,sz:"m",sh:"round",bz:"coin",dc:"black",ly:"date",ix:"arabic",st:["nato","leather"],mv:"auto",vb:["tool","one"],bt:"house",
  sp:["38 mm","100 m","H-10 automatic · 80 h"],w:"The hand-wound Khaki's automatic sibling, with a date, a knurled coin-edge bezel and the same eighty-hour movement. If you want one mechanical watch to beat up and never think about, this is the shortlist."},
 
@@ -199,8 +199,8 @@ const WATCHES = [
  sp:["42 mm titanium","500 m","COSC MT5612"],w:"Titanium, five hundred metres, a helium escape valve and a clasp that self-adjusts as a wetsuit compresses. The serious tool watch in Tudor's range, and matte where the Black Bay is glossy."},
 {s:"cartier-tank-must",n:"Tank Must XL",b:"Cartier",p:4000,sz:"m",sh:"rect",bz:"none",dc:"white",ly:"date",ix:"roman",st:["leather"],mv:"auto",vb:["dress","statement"],bt:"house",
  sp:["31 × 41 mm","Roman dial · date at 6","Automatic"],w:"The most recognisable rectangular watch in the world, in its larger automatic form with a silvered dial and a date at six. Worn by everyone from Warhol to Diana, and it still looks like a drawing of a watch rather than a machine."},
-{s:"longines-legend-diver",n:"Legend Diver",b:"Longines",p:3100,sz:"m",sh:"round",bz:"none",dc:"green",ly:"plain",ix:"arabic",st:["leather","mesh"],mv:"auto",vb:["statement","one"],bt:"house",
- sp:["39 mm bronze","300 m","Inner rotating bezel"],w:"A 1960s skin-diver reissue with no external bezel at all — just an internal timing ring turned by a second crown. Often called a Super Compressor, though strictly that name belongs to a different maker's case."},
+{s:"longines-legend-diver",n:"Legend Diver Bronze",b:"Longines",p:3550,sz:"xl",sh:"round",bz:"none",dc:"green",ly:"plain",ix:"arabic",st:["leather","nato"],mv:"auto",vb:["statement","one"],bt:"house",
+ sp:["42 mm bronze","300 m","Inner rotating bezel"],w:"A 1960s skin-diver reissue with no external bezel at all — just an internal timing ring turned by a second crown. Often called a Super Compressor, though strictly that name belongs to a different maker's case."},
 {s:"longines-zulu",n:"Spirit Zulu Time",b:"Longines",p:3250,sz:"m",sh:"round",bz:"gmt",dc:"blue",ly:"gmt",ix:"arabic",st:["oyster","leather"],mv:"auto",vb:["one"],bt:"house",
  sp:["39 mm","100 m","True GMT · COSC"],w:"A true-GMT movement — the local hour hand jumps independently — under a 24-hour ceramic bezel, at roughly a third of what the obvious alternative costs. The traveller's value play."},
 {s:"tag-carrera",n:"Carrera Automatic",b:"TAG Heuer",p:3500,sz:"m",sh:"round",bz:"smooth",dc:"black",ly:"date",ix:"baton",st:["leather","oyster"],mv:"auto",vb:["one","dress"],bt:"house",
@@ -209,8 +209,8 @@ const WATCHES = [
 /* ---------- $6,000 and up ---------- */
 {s:"breitling-premier",n:"Premier (1950s)",b:"Breitling",p:6500,sz:"s",sh:"round",bz:"none",dc:"warm",ly:"chrono",ix:"baton",st:["leather"],mv:"hand",vb:["dress","statement"],bt:"house",
  sp:["~36 mm gold","Three registers","Hand-wound chronograph"],w:"A 1950s hand-wound chronograph with a champagne dial gone warmer still with age, blued hands and a tachymeter printed right on the dial. Vintage, so condition decides the price far more than the reference does."},
-{s:"omega-aqua-terra",n:"Seamaster Aqua Terra",b:"Omega",p:6800,sz:"m",sh:"round",bz:"smooth",dc:"blue",ly:"date",ix:"baton",st:["rubber","oyster","leather"],mv:"auto",vb:["one","dress"],bt:"house",
- sp:["38 mm","150 m","Co-Axial Master Chronometer"],w:"A tiled mosaic dial, a 15,000-gauss antimagnetic movement and METAS certification, in a case that works with a suit or a swim. The quiet, sensible, extremely good answer."},
+{s:"omega-aqua-terra",n:"Seamaster Aqua Terra",b:"Omega",p:6800,sz:"l",sh:"round",bz:"smooth",dc:"blue",ly:"date",ix:"baton",st:["rubber","oyster","leather"],mv:"auto",vb:["one","dress"],bt:"house",
+ sp:["41 mm","150 m","Co-Axial Master Chronometer"],w:"A tiled mosaic dial, a 15,000-gauss antimagnetic movement and METAS certification, in a case that works with a suit or a swim. The quiet, sensible, extremely good answer."},
 {s:"gs-snowflake",n:"SBGA011 Snowflake",b:"Grand Seiko",p:6400,sz:"l",sh:"round",bz:"smooth",dc:"white",ly:"date",ix:"baton",st:["oyster"],mv:"auto",vb:["dress","statement"],bt:"house",
  sp:["41 mm titanium","100 m","Spring Drive"],w:"The Snowflake. A dial textured like wind-blown snow, a titanium case polished by hand until the facets look liquid, and a seconds hand that glides rather than ticks, because Spring Drive is a mainspring regulated electronically — neither quite mechanical nor quartz."},
 {s:"omega-speedmaster",n:"Speedmaster Professional",b:"Omega",p:7000,sz:"xl",sh:"round",bz:"tachy",dc:"black",ly:"chrono",ix:"baton",st:["oyster","leather"],mv:"hand",vb:["statement","one"],bt:"house",
@@ -218,21 +218,21 @@ const WATCHES = [
 {s:"rolex-explorer",n:"Explorer",b:"Rolex",p:7900,sz:"s",sh:"round",bz:"smooth",dc:"black",ly:"plain",ix:"arabic",st:["oyster"],mv:"auto",vb:["one","dress"],bt:"house",
  sp:["36 mm","100 m","Automatic · 3-6-9 dial"],w:"Black dial, 3-6-9 numerals, no date, no bezel action. The least showy Rolex and, to a certain kind of person, the only one worth owning."},
 {s:"jlc-reverso",n:"Reverso Classic",b:"Jaeger-LeCoultre",p:8100,sz:"m",sh:"rect",bz:"none",dc:"white",ly:"plain",ix:"arabic",st:["leather"],mv:"hand",vb:["dress","statement"],bt:"house",
- sp:["45.6 × 27.4 mm","30 m","Hand-wound · case flips"],w:"Designed in 1931 so polo players could flip the dial inward and protect it. The case still swivels in its cradle, the art-deco gadroons are still there, and nothing else on a wrist does this."},
+ sp:["40.1 × 24.4 mm","30 m","Hand-wound · case flips"],w:"Designed in 1931 so polo players could flip the dial inward and protect it. The case still swivels in its cradle, the art-deco gadroons are still there, and nothing else on a wrist does this."},
 {s:"cartier-santos",n:"Santos Galbée",b:"Cartier",p:4500,sz:"m",sh:"integrated",bz:"smooth",dc:"white",ly:"date",ix:"roman",st:["integrated"],mv:"auto",vb:["statement","dress"],bt:"house",
  sp:["29 × 41 mm","Gold and steel","Exposed bezel screws"],w:"Cartier made a flat square watch for the aviator Alberto Santos-Dumont in 1904; this squared, screw-set, integrated-bracelet design descends from the 1978 reworking of it. Dressy and sporty at once, which almost nothing manages."},
 {s:"rolex-datejust",n:"Datejust 36",b:"Rolex",p:10700,sz:"s",sh:"round",bz:"fluted",dc:"black",ly:"date",ix:"baton",st:["jubilee","oyster"],mv:"auto",vb:["dress","one"],bt:"house",
  sp:["36 mm","100 m","Fluted white-gold bezel"],w:"Eighty years of being the default good watch. The machined flutes round the bezel are white gold, which is most of why this costs what it does, and they throw light in a way a plain bezel never will."},
 {s:"panerai-luminor",n:"Luminor Marina",b:"Panerai",p:8600,sz:"xl",sh:"cushion",bz:"none",dc:"black",ly:"plain",ix:"arabic",st:["leather"],mv:"auto",vb:["statement"],bt:"house",
  sp:["44 mm cushion","300 m","Crown-protecting lever"],w:"A 44 mm cushion case with a crown-locking lever and a sandwich dial that glows like a torch. Descended from Italian naval frogman equipment, and it has never once pretended to be subtle."},
-{s:"breitling-navitimer",n:"Navitimer 806",b:"Breitling",p:9500,sz:"l",sh:"round",bz:"coin",dc:"black",ly:"chrono",ix:"baton",st:["oyster","leather"],mv:"auto",vb:["statement"],bt:"house",
- sp:["41 mm","30 m","Circular slide rule"],w:"A working circular slide rule wrapped around a three-register chronograph, designed in 1952 so pilots could compute fuel burn mid-flight. Spectacularly busy, and completely earned."},
+{s:"breitling-navitimer",n:"Navitimer 806",b:"Breitling",p:9500,sz:"l",sh:"round",bz:"coin",dc:"black",ly:"chrono",ix:"baton",st:["oyster","leather"],mv:"hand",vb:["statement"],bt:"house",
+ sp:["41 mm","Hand-wound Venus 178","Circular slide rule"],w:"A working circular slide rule wrapped around a three-register chronograph, designed in 1952 so pilots could compute fuel burn mid-flight. Hand-wound, spectacularly busy, and completely earned."},
 {s:"rolex-submariner",n:"Submariner",b:"Rolex",p:10900,sz:"l",sh:"round",bz:"dive",dc:"black",ly:"date",ix:"dots",st:["oyster"],mv:"auto",vb:["one","tool"],bt:"house",
  sp:["40 mm","300 m","Aluminium bezel insert"],w:"The archetype every other dive watch is measured against, and the reason this page has a dive-bezel option at all. Over-specified, over-exposed, and still very hard to argue with."},
 {s:"rolex-gmt",n:"GMT-Master II",b:"Rolex",p:11200,sz:"l",sh:"round",bz:"gmt",dc:"black",ly:"gmt",ix:"dots",st:["jubilee","oyster"],mv:"auto",vb:["one","statement"],bt:"house",
  sp:["40 mm","100 m","Two-colour ceramic bezel"],w:"Built in 1955 for Pan Am crews crossing time zones, and the watch that introduced the two-colour 24-hour bezel. The blue-and-black version is among the most desired steel watches on earth."},
-{s:"fifty-fathoms",n:"Fifty Fathoms",b:"Blancpain",p:15000,sz:"xl",sh:"round",bz:"dive",dc:"black",ly:"date",ix:"dots",st:["nato","rubber"],mv:"auto",vb:["statement","tool"],bt:"house",
- sp:["42.3 mm","300 m","Moisture indicator at 6"],w:"One of the two watches that invented the modern diver in 1953 — the priority argument with the Submariner has never been settled. The little disc at six is a moisture indicator that turns red if the case ever floods."},
+{s:"fifty-fathoms",n:"Tribute to Fifty Fathoms MIL-SPEC",b:"Blancpain",p:15000,sz:"l",sh:"round",bz:"dive",dc:"black",ly:"date",ix:"dots",st:["nato","rubber"],mv:"auto",vb:["statement","tool"],bt:"house",
+ sp:["40.3 mm","300 m","Moisture indicator at 6"],w:"One of the two watches that invented the modern diver in 1953 — the priority argument with the Submariner has never been settled. This is the MIL-SPEC tribute, and the little disc at six is a moisture indicator that turns red if the case ever floods."},
 {s:"ap-royal-oak",n:"Royal Oak 15202",b:"Audemars Piguet",p:28000,sz:"m",sh:"integrated",bz:"coin",dc:"blue",ly:"date",ix:"baton",st:["integrated"],mv:"auto",vb:["statement"],bt:"house",
  sp:["39 mm","50 m","Octagonal bezel · tapisserie"],w:"Gérald Genta's 1972 design, in the thin 39 mm 'Jumbo' form closest to the original. An octagonal bezel with eight exposed hexagonal screws over a waffle-pressed dial — the watch that made a steel sports watch cost what a gold one did."}
 ];
@@ -378,28 +378,16 @@ const CREDITS = [
   "page": "https://commons.wikimedia.org/wiki/File:Hamilton_Khaki_Field.jpg"
  },
  {
-  "title": "Scale diagram — 34 – 37 mm on a 7-inch wrist",
-  "author": "Drawn for this page",
-  "license": "No attribution required",
-  "page": ""
+  "title": "Seiko SNK809.jpg",
+  "author": "Soulreaper",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seiko_SNK809.jpg"
  },
  {
-  "title": "Scale diagram — 37 – 39.5 mm on a 7-inch wrist",
-  "author": "Drawn for this page",
-  "license": "No attribution required",
-  "page": ""
- },
- {
-  "title": "Scale diagram — 40 – 42 mm on a 7-inch wrist",
-  "author": "Drawn for this page",
-  "license": "No attribution required",
-  "page": ""
- },
- {
-  "title": "Scale diagram — 42 mm and up on a 7-inch wrist",
-  "author": "Drawn for this page",
-  "license": "No attribution required",
-  "page": ""
+  "title": "Bulova Lunar Pilot.jpg",
+  "author": "Clyde94",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Bulova_Lunar_Pilot.jpg"
  },
  {
   "title": "Rolex-GMT-Master-II-Batgirl.jpg",
@@ -442,12 +430,6 @@ const CREDITS = [
   "author": "PAPPL",
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Breitling_Navitimer_806_E_last_version.jpg"
- },
- {
-  "title": "Bulova Lunar Pilot.jpg",
-  "author": "Clyde94",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Bulova_Lunar_Pilot.jpg"
  },
  {
   "title": "Citizen Promaster Eco-Drive AP0440-14F Diver's 200 m (edited, cropped to casing).jpg",
@@ -496,12 +478,6 @@ const CREDITS = [
   "author": "663highland",
   "license": "CC BY 2.5",
   "page": "https://commons.wikimedia.org/wiki/File:Seiko_Prospex_Alpinist01bs.jpg"
- },
- {
-  "title": "Seiko SNK809.jpg",
-  "author": "Soulreaper",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Seiko_SNK809.jpg"
  },
  {
   "title": "TAG Heuer Carrera Calibre 5, anni 2010.jpg",
