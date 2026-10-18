@@ -246,10 +246,10 @@
   "page": "https://commons.wikimedia.org/wiki/File:Nomos_Glash%C3%BCtte_Tangente_neomatik_41_Update.jpg"
  },
  "dial-warm-0.webp": {
-  "title": "Cartier Tank Must XL automatico.jpg",
-  "author": "EMore98",
-  "license": "CC BY-SA 4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Cartier_Tank_Must_XL_automatico.jpg"
+  "title": "Breitling Premier 1950th.png",
+  "author": "Ｔｏｍ",
+  "license": "FAL",
+  "page": "https://commons.wikimedia.org/wiki/File:Breitling_Premier_1950th.png"
  },
  "strap-oyster-0.webp": {
   "title": "Rolex Deepsea Sea-Dweller 116660 Blue Dial 'James Cameron'.jpg",
@@ -508,5 +508,11 @@
   "author": "Drawn for this page",
   "license": "No attribution required",
   "page": ""
+ },
+ "watch-breitling-premier.webp": {
+  "title": "Breitling Premier 1950th.png",
+  "author": "Ｔｏｍ",
+  "license": "FAL",
+  "page": "https://commons.wikimedia.org/wiki/File:Breitling_Premier_1950th.png"
  }
 }
