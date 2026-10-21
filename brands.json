@@ -1,0 +1,1626 @@
+{
+  "_": "Brand census — the scope document for EXPANSION.md. Every brand worth covering, what tier it sits in, which price brackets it plays in, and which phase it belongs to. `lines` is an ESTIMATE of model lines worth cataloguing (not references, and not a verified count); treat it as sizing, never as data. `photo` records how a press image is likely to be obtained: `press` = brand media room, `commons` = already well covered on Wikimedia, `hard` = expect to fight for it.",
+  "_tiers": "house = established, recognisable, real service support. indie = smaller and enthusiast-facing. value = mass-market, cheap to replace. fashion = sold on styling and a name, arriving in Phase 2.",
+  "_brackets": "A under $250 · B $250-750 · C $750-2000 · D $2000-6000 · E $6000+",
+  "brands": [
+    {
+      "b": "Rolex",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "E"
+      ],
+      "phase": 1,
+      "lines": 9,
+      "photo": "commons",
+      "have": 4,
+      "batch": "1a"
+    },
+    {
+      "b": "Omega",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "D",
+        "E"
+      ],
+      "phase": 1,
+      "lines": 7,
+      "photo": "commons",
+      "have": 2,
+      "batch": "1a"
+    },
+    {
+      "b": "Tudor",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 6,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Seiko",
+      "tier": "value",
+      "country": "JP",
+      "bands": [
+        "A",
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 12,
+      "photo": "press",
+      "have": 2,
+      "why": "Prospex, Presage and the 5 Sport line are each a catalogue of their own. Badly under-covered at 2.",
+      "batch": "1a"
+    },
+    {
+      "b": "Grand Seiko",
+      "tier": "house",
+      "country": "JP",
+      "bands": [
+        "D",
+        "E"
+      ],
+      "phase": 1,
+      "lines": 6,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Citizen",
+      "tier": "value",
+      "country": "JP",
+      "bands": [
+        "A",
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 7,
+      "photo": "press",
+      "have": 1,
+      "why": "Eco-Drive is the whole solar answer; one watch cannot carry `mv:solar`.",
+      "batch": "1a"
+    },
+    {
+      "b": "Casio",
+      "tier": "value",
+      "country": "JP",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 1,
+      "lines": 8,
+      "photo": "press",
+      "have": 2,
+      "why": "G-Shock alone needs four or five. Also the only real stock for `mv:digital`.",
+      "batch": "1a"
+    },
+    {
+      "b": "Orient",
+      "tier": "value",
+      "country": "JP",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Tissot",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 6,
+      "photo": "press",
+      "have": 2,
+      "why": "Also the cheapest credible route to a skeleton dial.",
+      "batch": "1a"
+    },
+    {
+      "b": "Hamilton",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 6,
+      "photo": "press",
+      "have": 2,
+      "batch": "1a"
+    },
+    {
+      "b": "Longines",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 6,
+      "photo": "press",
+      "have": 2,
+      "batch": "1a"
+    },
+    {
+      "b": "Timex",
+      "tier": "value",
+      "country": "US",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 1,
+      "lines": 5,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Bulova",
+      "tier": "value",
+      "country": "US",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Oris",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 6,
+      "photo": "press",
+      "have": 1,
+      "why": "Artelier Skeleton is a clean mid-price `ly:skeleton` seed.",
+      "batch": "1a"
+    },
+    {
+      "b": "Sinn",
+      "tier": "house",
+      "country": "DE",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 5,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Nomos",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 5,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "TAG Heuer",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "D",
+        "E"
+      ],
+      "phase": 1,
+      "lines": 5,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Breitling",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "D",
+        "E"
+      ],
+      "phase": 1,
+      "lines": 5,
+      "photo": "commons",
+      "have": 2,
+      "batch": "1a"
+    },
+    {
+      "b": "Cartier",
+      "tier": "house",
+      "country": "FR",
+      "bands": [
+        "D",
+        "E"
+      ],
+      "phase": 1,
+      "lines": 5,
+      "photo": "press",
+      "have": 2,
+      "why": "Santos Skeleton and the tonneau-cased Tonneau both unlock new vocabulary.",
+      "batch": "1a"
+    },
+    {
+      "b": "IWC",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "D",
+        "E"
+      ],
+      "phase": 1,
+      "lines": 5,
+      "photo": "press",
+      "have": 0,
+      "why": "A conspicuous absence — Mark pilot and Portugieser are reference points.",
+      "batch": "1b"
+    },
+    {
+      "b": "Jaeger-LeCoultre",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "E"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Panerai",
+      "tier": "house",
+      "country": "IT",
+      "bands": [
+        "D",
+        "E"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "commons",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Zenith",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "D",
+        "E"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 0,
+      "why": "Defy Skeleton is the high-end `ly:skeleton` seed. Also a panda-dial Chronomaster.",
+      "batch": "1b"
+    },
+    {
+      "b": "Junghans",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Mondaine",
+      "tier": "indie",
+      "country": "CH",
+      "bands": [
+        "B"
+      ],
+      "phase": 1,
+      "lines": 2,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Laco",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Vostok",
+      "tier": "value",
+      "country": "RU",
+      "bands": [
+        "A"
+      ],
+      "phase": 1,
+      "lines": 2,
+      "photo": "hard",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Blancpain",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "E"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 1,
+      "batch": "1a"
+    },
+    {
+      "b": "Audemars Piguet",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "E"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 1,
+      "why": "Royal Oak Openworked is the flagship skeleton.",
+      "batch": "1a"
+    },
+    {
+      "b": "Christopher Ward",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "B",
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 6,
+      "photo": "press",
+      "have": 0,
+      "why": "Cut from the original build for lack of open photos. First back in — `bt:indie` is starved at 3 watches total.",
+      "batch": "1a"
+    },
+    {
+      "b": "Baltic",
+      "tier": "indie",
+      "country": "FR",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 5,
+      "photo": "press",
+      "have": 0,
+      "why": "Also the cleanest panda-dial chronograph under $1k.",
+      "batch": "1a"
+    },
+    {
+      "b": "Lorier",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "B"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 0,
+      "why": "Named in the README as cut.",
+      "batch": "1a"
+    },
+    {
+      "b": "Nodus",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 0,
+      "batch": "1a"
+    },
+    {
+      "b": "Monta",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 0,
+      "batch": "1a"
+    },
+    {
+      "b": "Doxa",
+      "tier": "indie",
+      "country": "CH",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 0,
+      "why": "The orange-dial case, if `dc:orange` is ever taken up.",
+      "batch": "1a"
+    },
+    {
+      "b": "Nivada Grenchen",
+      "tier": "indie",
+      "country": "CH",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 0,
+      "batch": "1a"
+    },
+    {
+      "b": "Zodiac",
+      "tier": "indie",
+      "country": "CH",
+      "bands": [
+        "C"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "batch": "1b"
+    },
+    {
+      "b": "Squale",
+      "tier": "indie",
+      "country": "CH",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "batch": "1b"
+    },
+    {
+      "b": "Halios",
+      "tier": "indie",
+      "country": "CA",
+      "bands": [
+        "C"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "hard",
+      "have": 0,
+      "why": "Sells out in minutes; press imagery is thin.",
+      "batch": "1b"
+    },
+    {
+      "b": "Traska",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "B"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "batch": "1b"
+    },
+    {
+      "b": "Farer",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "C"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "batch": "1b"
+    },
+    {
+      "b": "Marathon",
+      "tier": "indie",
+      "country": "CA",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "batch": "1b"
+    },
+    {
+      "b": "Certina",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "batch": "1b"
+    },
+    {
+      "b": "Rado",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 0,
+      "why": "The ceramic case brand — the only credible seed for `ma:ceramic`.",
+      "batch": "1b"
+    },
+    {
+      "b": "Mido",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "batch": "1b"
+    },
+    {
+      "b": "Frederique Constant",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "why": "Heart Beat is an open-dial line — another skeleton seed.",
+      "batch": "1b"
+    },
+    {
+      "b": "Seiko 5 Sports",
+      "tier": "value",
+      "country": "JP",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 1,
+      "lines": 4,
+      "photo": "press",
+      "have": 0,
+      "note": "Catalogue under Seiko; listed separately only for scout assignment.",
+      "batch": "1b"
+    },
+    {
+      "b": "Victorinox",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "batch": "1b"
+    },
+    {
+      "b": "Stowa",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "batch": "1b"
+    },
+    {
+      "b": "Meistersinger",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 1,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "note": "Single-hand dials — may need vocabulary of their own.",
+      "batch": "1b"
+    },
+    {
+      "b": "Patek Philippe",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "E"
+      ],
+      "phase": 2,
+      "lines": 4,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Vacheron Constantin",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "E"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "A. Lange & Sohne",
+      "tier": "house",
+      "country": "DE",
+      "bands": [
+        "E"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Breguet",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "E"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Glashutte Original",
+      "tier": "house",
+      "country": "DE",
+      "bands": [
+        "E"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Girard-Perregaux",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "E"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Ulysse Nardin",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "E"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Hublot",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "E"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "why": "Heavy skeleton and ceramic stock."
+    },
+    {
+      "b": "Chopard",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "D",
+        "E"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Montblanc",
+      "tier": "house",
+      "country": "DE",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Bell & Ross",
+      "tier": "house",
+      "country": "FR",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Bremont",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "D"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Ball",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Alpina",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Maurice Lacroix",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Baume & Mercier",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Raymond Weil",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Muhle-Glashutte",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Damasko",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Fortis",
+      "tier": "indie",
+      "country": "CH",
+      "bands": [
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Hanhart",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Tutima",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Sternglas",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Yema",
+      "tier": "indie",
+      "country": "FR",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Serica",
+      "tier": "indie",
+      "country": "FR",
+      "bands": [
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Furlan Marri",
+      "tier": "indie",
+      "country": "CH",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0,
+      "why": "Salmon dials, if `dc:salmon` is taken up."
+    },
+    {
+      "b": "Anordain",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0,
+      "note": "Enamel dials."
+    },
+    {
+      "b": "Fears",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Vertex",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Oak & Oscar",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Autodromo",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Brew",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Unimatic",
+      "tier": "indie",
+      "country": "IT",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Zelos",
+      "tier": "indie",
+      "country": "SG",
+      "bands": [
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0,
+      "why": "Bronze and meteorite — real `ma:bronze` stock."
+    },
+    {
+      "b": "Dan Henry",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Vaer",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Islander",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Phoibos",
+      "tier": "indie",
+      "country": "CN",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "San Martin",
+      "tier": "indie",
+      "country": "CN",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "hard",
+      "have": 0
+    },
+    {
+      "b": "Spinnaker",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Shinola",
+      "tier": "house",
+      "country": "US",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Movado",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Swatch",
+      "tier": "value",
+      "country": "CH",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "why": "Resin cases at scale — real `ma:resin` stock beyond Casio."
+    },
+    {
+      "b": "Luminox",
+      "tier": "value",
+      "country": "CH",
+      "bands": [
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Lorus",
+      "tier": "value",
+      "country": "JP",
+      "bands": [
+        "A"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Pulsar",
+      "tier": "value",
+      "country": "JP",
+      "bands": [
+        "A"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Q&Q",
+      "tier": "value",
+      "country": "JP",
+      "bands": [
+        "A"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Fossil",
+      "tier": "fashion",
+      "country": "US",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 4,
+      "photo": "press",
+      "have": 0,
+      "why": "The reason the fashion tier exists: Twist is the only credible sub-$250 skeleton."
+    },
+    {
+      "b": "Skagen",
+      "tier": "fashion",
+      "country": "DK",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "why": "Mesh bracelets — `st:mesh` currently has 2 watches."
+    },
+    {
+      "b": "Daniel Wellington",
+      "tier": "fashion",
+      "country": "SE",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "MVMT",
+      "tier": "fashion",
+      "country": "US",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Nixon",
+      "tier": "fashion",
+      "country": "US",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Emporio Armani",
+      "tier": "fashion",
+      "country": "IT",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Michael Kors",
+      "tier": "fashion",
+      "country": "US",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Diesel",
+      "tier": "fashion",
+      "country": "IT",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Hugo Boss",
+      "tier": "fashion",
+      "country": "DE",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Guess",
+      "tier": "fashion",
+      "country": "US",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Braun",
+      "tier": "fashion",
+      "country": "DE",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Bering",
+      "tier": "fashion",
+      "country": "DK",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Triwa",
+      "tier": "fashion",
+      "country": "SE",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Invicta",
+      "tier": "fashion",
+      "country": "US",
+      "bands": [
+        "A",
+        "B"
+      ],
+      "phase": 2,
+      "lines": 3,
+      "photo": "press",
+      "have": 0,
+      "note": "Heavy skeleton stock at the bottom of the market."
+    },
+    {
+      "b": "Stuhrling",
+      "tier": "fashion",
+      "country": "US",
+      "bands": [
+        "A"
+      ],
+      "phase": 2,
+      "lines": 2,
+      "photo": "press",
+      "have": 0,
+      "note": "As above."
+    },
+    {
+      "b": "Benrus",
+      "tier": "indie",
+      "country": "US",
+      "bands": [
+        "B"
+      ],
+      "phase": 3,
+      "lines": 1,
+      "photo": "hard",
+      "have": 0
+    },
+    {
+      "b": "Eterna",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C"
+      ],
+      "phase": 3,
+      "lines": 1,
+      "photo": "hard",
+      "have": 0
+    },
+    {
+      "b": "Edox",
+      "tier": "house",
+      "country": "CH",
+      "bands": [
+        "C"
+      ],
+      "phase": 3,
+      "lines": 1,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Revue Thommen",
+      "tier": "indie",
+      "country": "CH",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 3,
+      "lines": 1,
+      "photo": "hard",
+      "have": 0
+    },
+    {
+      "b": "Lip",
+      "tier": "indie",
+      "country": "FR",
+      "bands": [
+        "B"
+      ],
+      "phase": 3,
+      "lines": 1,
+      "photo": "hard",
+      "have": 0
+    },
+    {
+      "b": "Union Glashutte",
+      "tier": "indie",
+      "country": "DE",
+      "bands": [
+        "C",
+        "D"
+      ],
+      "phase": 3,
+      "lines": 1,
+      "photo": "press",
+      "have": 0
+    },
+    {
+      "b": "Garrick",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "E"
+      ],
+      "phase": 3,
+      "lines": 1,
+      "photo": "hard",
+      "have": 0
+    },
+    {
+      "b": "Schofield",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "D"
+      ],
+      "phase": 3,
+      "lines": 1,
+      "photo": "hard",
+      "have": 0
+    },
+    {
+      "b": "Pinion",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "C"
+      ],
+      "phase": 3,
+      "lines": 1,
+      "photo": "hard",
+      "have": 0
+    },
+    {
+      "b": "Elliot Brown",
+      "tier": "indie",
+      "country": "UK",
+      "bands": [
+        "B",
+        "C"
+      ],
+      "phase": 3,
+      "lines": 1,
+      "photo": "press",
+      "have": 0
+    }
+  ],
+  "_batches": "Phase 1 splits in two: 1a deepens every brand already in the catalogue plus the indies the README records as cut for lack of photos (-> 172 watches); 1b adds the mainstream brands still missing entirely (-> 225)."
+}

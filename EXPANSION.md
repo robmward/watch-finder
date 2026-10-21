@@ -10,15 +10,38 @@ thousands, and a reference-level catalogue is a database, not a finder. The
 useful target is **every watch a buyer would plausibly consider**, which is a
 real and finite set:
 
+These were estimates until the census; `brands.json` now replaces them with
+counted scope. 122 brands, 380 model lines worth cataloguing.
+
 | Tier | Target | What it adds |
 | --- | --- | --- |
 | 0 — now | 38 | — |
-| 1 | 150 | Completes the mainstream. Every model line a normal buyer meets in a shop or a YouTube roundup. |
-| 2 | 400 | Micro-brands, fashion tier, skeletons, the full quartz/solar world. |
-| 3 | 600 | Vintage icons and the long tail. Optional. |
+| 1a | 172 | Deepens every brand already in the catalogue, and brings back the seven indies the README records as cut for lack of photos. |
+| 1b | 225 | The mainstream brands still missing outright — IWC, Zenith, Rado, Certina, Mido, Victorinox, Frederique Constant and the rest. |
+| 2 | 370 | Micro-brands, the fashion tier, skeletons, the full quartz/solar world. |
+| 3 | 380 | Vintage and the long tail. Ten brands, and genuinely optional. |
 
-Tier 1 is the one that makes the quiz feel complete. Tier 2 is what makes it
+Tier 1b is the one that makes the quiz feel complete. Tier 2 is what makes it
 feel exhaustive.
+
+The original plan said 150 / 400 / 600. The census says 172 / 225 / 380 — the
+early phases are bigger than guessed and the long tail is much smaller, because
+"every watch a buyer would consider" runs out sooner than it feels like it
+should. 380 is the real ceiling at this definition.
+
+Two findings from the census worth acting on:
+
+- **108 of 122 brands will need press images; only 4 are well covered on
+  Wikimedia.** This is the strongest evidence for the photo decision — a
+  CC-only catalogue really was capped near its current size, and not by
+  effort.
+- **Ten brands are flagged `hard`** — Vostok, Halios, San Martin, Benrus,
+  Eterna, Revue Thommen, Lip, Garrick, Schofield, Pinion. Expect to fight for
+  an image or drop them. They are the honest risk list, and all but Vostok sit
+  in Phase 2 or 3, so none of them block Phase 1.
+
+The census `have` column totals exactly 38, which is a useful cross-check: it
+was built against the catalogue rather than from memory.
 
 ## The three blockers, and what unblocks them
 
