@@ -34,7 +34,7 @@ const warn = m => { console.log('  warn  ' + m); warns++; };
 
 /* 1. every option is reachable: at least one watch carries that value */
 console.log(`\n1. Option coverage (${WATCHES.length} watches, ${STEPS.length} steps)`);
-const field = { vb:'vb', sz:'sz', sh:'sh', bz:'bz', dc:'dc', ly:'ly', ix:'ix', st:'st', mv:'mv', bt:'bt' };
+const field = { vb:'vb', sz:'sz', sh:'sh', bz:'bz', dc:'dc', ly:'ly', ix:'ix', st:'st', ma:'ma', mv:'mv', bt:'bt' };
 for (const step of STEPS) {
   if (step.id === 'price') continue;
   for (const opt of step.options) {
@@ -89,7 +89,54 @@ const credits = JSON.parse(fs.readFileSync(path.join(root, 'credits.json'), 'utf
 const imgs = fs.readdirSync(path.join(root, 'images'));
 for (const f of imgs) if (/\.(webp|jpe?g|png)$/i.test(f) && !credits[f]) fail(`${f}: no credit`);
 for (const k of Object.keys(credits)) if (!imgs.includes(k)) warn(`credit for missing image ${k}`);
-console.log(`  ok    ${imgs.length} images, ${Object.keys(credits).length} credit entries`);
+
+/* A credit is one of two shapes and must be complete in whichever it claims:
+   an open licence owes an author and a licence name, a manufacturer press
+   image owes the brand it came from. Half an attribution is worse than none —
+   it reads as a licence we cannot actually point to. */
+let press = 0;
+for (const [f, c] of Object.entries(credits)) {
+  if (!c.page)  fail(`${f}: credit has no source page`);
+  if (!c.title) fail(`${f}: credit has no title`);
+  if (c.source === "press") {
+    press++;
+    if (!c.brand) fail(`${f}: press credit has no brand`);
+    if (c.license) fail(`${f}: press credit also claims licence "${c.license}" — pick one`);
+  } else {
+    if (!c.author)  fail(`${f}: open-licence credit has no author`);
+    if (!c.license) fail(`${f}: open-licence credit has no licence`);
+  }
+}
+console.log(`  ok    ${imgs.length} images, ${Object.keys(credits).length} credit entries ` +
+            `(${Object.keys(credits).length - press} open-licence, ${press} press)`);
+
+/* 3c. facet collisions: the check that governs how far the catalogue can grow.
+   rank() breaks ties on price (cheapest first), so watches sharing one exact
+   facet vector form a cluster in which only the cheapest member is ever
+   reachable. A growing cluster is dead stock, not coverage — the fix is a new
+   facet dimension, never more rows. */
+console.log('\n3c. Facet collisions');
+const CLUSTER_MAX = 4;
+const vector = w => [w.vb.slice().sort().join('+'), w.sz, w.sh, w.bz, w.dc, w.ly, w.ix,
+                     w.st.slice().sort().join('+'), w.ma, w.mv, w.bt].join('|');
+const clusters = new Map();
+for (const w of WATCHES) {
+  const k = vector(w);
+  if (!clusters.has(k)) clusters.set(k, []);
+  clusters.get(k).push(w);
+}
+const collided = [...clusters.values()].filter(c => c.length > 1)
+  .sort((a, b) => b.length - a.length);
+for (const c of collided) {
+  const members = c.slice().sort((a, b) => a.p - b.p);
+  const line = members.map(w => `${w.s} $${w.p}`).join(', ');
+  if (c.length > CLUSTER_MAX) fail(`cluster of ${c.length} shares one facet vector — needs a new dimension: ${line}`);
+  else warn(`${c.length} share a facet vector, only ${members[0].s} is reachable: ${line}`);
+}
+const dead = collided.reduce((n, c) => n + c.length - 1, 0);
+console.log(`  ok    ${clusters.size} distinct vectors across ${WATCHES.length} watches` +
+            `, largest cluster ${collided.length ? collided[0].length : 1}` +
+            `, ${dead} unreachable on price tie-break`);
 
 /* 4. engine: random complete answer sets always produce a ranked result */
 console.log('\n4. Engine smoke test');
@@ -113,7 +160,8 @@ console.log('\n5. Every watch is winnable');
 const unwinnable = [];
 for (const w of WATCHES) {
   ctx.__api.setAnswers({ vb:w.vb[0], sz:w.sz, sh:w.sh, bz:w.bz, dc:w.dc, ly:w.ly, ix:w.ix,
-                  st:w.st[0], mv:(w.mv==='auto'||w.mv==='hand')?'mech':(w.mv==='digital'?'digital':'lowmaint'),
+                  st:w.st[0], ma:w.ma,
+                  mv:(w.mv==='auto'||w.mv==='hand')?'mech':(w.mv==='digital'?'digital':'lowmaint'),
                   bt:w.bt, price:'A' });
   const top = ctx.rank(WATCHES)[0];
   if (!top || top.w.s !== w.s) unwinnable.push(`${w.s} loses to ${top ? top.w.s : 'nothing'}`);

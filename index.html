@@ -544,6 +544,88 @@ button{font:inherit; color:inherit;}
   .credits ul{grid-template-columns:1fr;}
 }
 
+/* ---------- browse ----------
+   The quiz shows eight watches at most. Everything else in the catalogue is
+   only reachable here, so this view is what makes a large catalogue worth
+   having. All classes are br- prefixed: nothing here should inherit a quiz
+   rule by accident. */
+.br-head{margin-bottom:18px;}
+.br-head h2{
+  font-family:var(--display); font-size:var(--step-3); font-weight:700;
+  line-height:1.05; margin:0 0 8px;
+}
+.br-head p{margin:0; color:var(--ink-2); max-width:62ch;}
+.br-controls{
+  display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end;
+  border-top:1px solid var(--hair-strong); border-bottom:1px solid var(--hair);
+  padding:14px 0; margin-bottom:22px;
+}
+.br-field{display:flex; flex-direction:column; gap:4px;}
+.br-field label{
+  font-family:var(--mono); font-size:.64rem; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+.br-field select, .br-field input{
+  font-family:var(--mono); font-size:.76rem; color:var(--ink);
+  background:var(--panel); border:1px solid var(--hair-strong);
+  border-radius:2px; padding:6px 8px; min-width:140px;
+}
+.br-field input{min-width:180px;}
+.br-field select:focus-visible, .br-field input:focus-visible{
+  outline:2px solid var(--lume); outline-offset:1px;
+}
+.br-count{
+  margin-left:auto; font-family:var(--mono); font-size:.72rem;
+  color:var(--ink-3); padding-bottom:7px;
+}
+.br-grid{
+  list-style:none; margin:0 0 30px; padding:0;
+  display:grid; gap:14px;
+  grid-template-columns:repeat(auto-fill, minmax(216px,1fr));
+}
+.br-card{
+  width:100%; background:var(--panel); border:1px solid var(--hair);
+  border-radius:3px; padding:0; text-align:left; cursor:pointer;
+  display:flex; flex-direction:column; overflow:hidden;
+  transition:border-color .16s, transform .16s, box-shadow .16s;
+}
+.br-card:hover{border-color:var(--hair-strong); transform:translateY(-2px); box-shadow:var(--shadow-lift);}
+.br-card:focus-visible{outline:2px solid var(--lume); outline-offset:2px;}
+.br-card:hover b{color:var(--lume);}
+.br-shot{
+  aspect-ratio:4/3; background:var(--panel-2);
+  border-bottom:1px solid var(--hair); position:relative; overflow:hidden;
+}
+.br-shot img{width:100%; height:100%; object-fit:cover;}
+/* Mirrors the quiz's hatched placeholder: a missing photo names the file it
+   wants rather than collapsing the card. */
+.br-shot.missing img{display:none;}
+.br-shot.missing::after{
+  content:attr(data-file); position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center; padding:8px;
+  font-family:var(--mono); font-size:.6rem; color:var(--ink-3); text-align:center;
+  background:repeating-linear-gradient(45deg, var(--panel-2) 0 6px, var(--panel) 6px 12px);
+}
+.br-body{padding:10px 12px 12px; display:flex; flex-direction:column; gap:3px; min-width:0;}
+.br-body .k{
+  font-family:var(--mono); font-size:.62rem; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+.br-body b{font-family:var(--display); font-size:var(--step-1); font-weight:700; line-height:1.15; overflow-wrap:anywhere;}
+.br-body .amt{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:.78rem; color:var(--radium);}
+.br-body .sp{font-family:var(--mono); font-size:.64rem; color:var(--ink-3); line-height:1.45;}
+.br-empty{
+  border:1px dashed var(--hair-strong); border-radius:3px; padding:28px;
+  text-align:center; color:var(--ink-2);
+}
+@media (max-width:560px){
+  .br-grid{grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:10px;}
+  .br-controls{gap:8px;}
+  .br-field select, .br-field input{min-width:0; width:100%;}
+  .br-field{flex:1 1 140px;}
+  .br-count{margin-left:0; flex:1 1 100%; padding-bottom:0;}
+}
+
 .hidden{display:none !important;}
 @media (prefers-reduced-motion:reduce){
   *{transition:none !important; animation:none !important;}
@@ -556,7 +638,8 @@ button{font:inherit; color:inherit;}
   <div class="masthead-in">
     <h1 class="wordmark">Bezel <em>First</em></h1>
     <p class="tagline">A men's watch finder that asks what you like, not who made it.<br />Brand is optional. Price is last.</p>
-    <button class="theme-toggle" id="themeBtn" type="button">Theme</button>
+    <button class="theme-toggle" id="browseBtn" type="button" style="margin-left:auto">Browse all</button>
+    <button class="theme-toggle" id="themeBtn" type="button" style="margin-left:0">Theme</button>
   </div>
 </header>
 
@@ -567,7 +650,7 @@ button{font:inherit; color:inherit;}
   <section class="stage" id="stage">
     <div class="progress"><i id="progBar" style="width:0%"></i></div>
     <div class="q-head">
-      <span class="q-step num" id="qStep">Step 01 / 11</span>
+      <span class="q-step num" id="qStep">Step 01 / 12</span>
       <h2 class="q-title" id="qTitle">—</h2>
       <p class="q-kicker" id="qKicker">—</p>
     </div>
@@ -587,7 +670,7 @@ button{font:inherit; color:inherit;}
   <aside class="rail" aria-label="Your spec sheet">
     <div class="rail-head">
       <h2 class="rail-title">Your spec</h2>
-      <span class="rail-count num" id="railCount">0 / 11</span>
+      <span class="rail-count num" id="railCount">0 / 12</span>
     </div>
     <ul class="rail-list" id="railList"></ul>
     <p class="rail-note">Every line is skippable. A blank line means “no preference” and simply stops filtering.</p>
@@ -609,6 +692,20 @@ button{font:inherit; color:inherit;}
    See IMAGES.md for the full shot list.
    ================================================================== */
 const IMG_DIR = "images/";
+
+/* Two kinds of photo now sit in the catalogue: openly-licensed ones (author +
+   licence, which the licence obliges us to print) and manufacturer press
+   images (courtesy of the brand, no licence to quote). The old summary line
+   claimed every photo was open-licensed, so it has to count them instead of
+   asserting it. */
+function creditSummary(list){
+  const press = list.filter(c => c.source === "press").length;
+  const open  = list.length - press;
+  const parts = [];
+  if (open)  parts.push(`${open} reused under open licences`);
+  if (press) parts.push(`${press} supplied by the manufacturer`);
+  return `${list.length} images, ${parts.join(" and ")}`;
+}
 
 /* Accepts one filename or several. With several, the extra frames are stacked
    and cross-faded by rotateShots() so an option like "Blue" can show the colour
@@ -795,6 +892,7 @@ function score(w){
   hit("ly", 2,  w.ly, "layout");
   hit("ix", 2,  w.ix, "markers");
   hit("st", 2,  w.st, "bracelet");
+  hit("ma", 2,  w.ma, "case material");
   hit("bt", 1,  w.bt, "brand lean");
 
   if(a.sz){
@@ -966,18 +1064,21 @@ function finish(){
     <div class="nav">
       <button class="btn btn-primary" id="againBtn" type="button">Start over</button>
       <button class="btn" id="editBtn" type="button">← Change an answer</button>
+      <button class="btn" id="browseAllBtn" type="button">Browse all ${WATCHES.length} →</button>
     </div>
 
     <p class="footnote" style="margin-top:34px">
       <b>On the prices</b> — figures are approximate US street or retail prices and move with exchange rates, model year and dealer. Treat them as brackets, not quotes.<br />
       <b>On availability</b> — a few of the steel sports models at the top of the list sell above retail on the secondary market, sometimes substantially. The number shown is list price, which is not always the price you can pay.<br />
-      <b>On brand</b> — this page never asked who made anything until question ten, and that question defaults to “don't care.” The names only appear here, after the taste is already settled.
+      <b>On brand</b> — this page never asked who made anything until question eleven, and that question defaults to “don't care.” The names only appear here, after the taste is already settled.
     </p>
 
     <details class="credits">
-      <summary>Photo credits — ${CREDITS.length} images, all reused under open licences</summary>
+      <summary>Photo credits — ${creditSummary(CREDITS)}</summary>
       <ul>
-        ${CREDITS.map(c => `<li><a href="${c.page}" target="_blank" rel="noopener">${c.title}</a> — ${c.author} — <span>${c.license}</span></li>`).join("")}
+        ${CREDITS.map(c => c.source === "press"
+          ? `<li><a href="${c.page}" target="_blank" rel="noopener">${c.title}</a> — <span>press image, courtesy of ${c.brand}</span></li>`
+          : `<li><a href="${c.page}" target="_blank" rel="noopener">${c.title}</a> — ${c.author} — <span>${c.license}</span></li>`).join("")}
       </ul>
     </details>`;
 
@@ -1022,6 +1123,11 @@ function wireResults(){
   el.results.querySelectorAll(".rung-go, .runner-go").forEach(b => {
     b.addEventListener("click", () => showDetail(b.dataset.slug));
   });
+  const browseAll = document.getElementById("browseAllBtn");
+  if(browseAll) browseAll.addEventListener("click", () => {
+    history.replaceState(null, "", location.pathname + "#browse");
+    showBrowse();
+  });
   wireShare();
   const buyMount = document.getElementById("buyMount");
   if(buyMount && lastMain) window.renderBuy(lastMain, buyMount);
@@ -1031,7 +1137,7 @@ function wireResults(){
 
 /* ---------- sharing ----------
    The link carries the watch, so whoever opens it lands on that watch rather
-   than at the start of an eleven-question quiz. */
+   than at the start of a twelve-question quiz. */
 function shareURL(slug){
   return location.origin + location.pathname + "#w=" + encodeURIComponent(slug);
 }
@@ -1099,6 +1205,7 @@ function showDetail(slug){
             <li><span class="k">Dial</span><span class="lead"></span><span class="v">${w.dc} · ${w.ly} · ${w.ix}</span></li>
             <li><span class="k">Bezel</span><span class="lead"></span><span class="v">${w.bz}</span></li>
             <li><span class="k">Worn on</span><span class="lead"></span><span class="v">${w.st.join(", ")}</span></li>
+            <li><span class="k">Case metal</span><span class="lead"></span><span class="v">${w.ma}</span></li>
             <li><span class="k">Movement</span><span class="lead"></span><span class="v">${w.mv}</span></li>
           </ul>
         </div>
@@ -1127,6 +1234,151 @@ function showDetail(slug){
   window.scrollTo({top:0, behavior:"smooth"});
 }
 
+/* ---------- browse ----------
+   A quiz run surfaces eight watches: the match, two rungs and five runners-up.
+   Everything else is unreachable without this view, which is why a growing
+   catalogue needs it. Filters use the same facet vocabulary as the quiz, so
+   nothing here can drift out of step with the questions. */
+const BR_SORTS = {
+  "price-asc":  { label:"Price, low to high", fn:(a,b) => a.p - b.p },
+  "price-desc": { label:"Price, high to low", fn:(a,b) => b.p - a.p },
+  "brand":      { label:"Brand, A to Z",      fn:(a,b) => (a.b + a.n).localeCompare(b.b + b.n) }
+};
+let brState = { q:"", brand:"", price:"", ma:"", mv:"", sort:"price-asc" };
+
+function brFilter(){
+  const q = brState.q.trim().toLowerCase();
+  return WATCHES.filter(w => {
+    if(q && !(`${w.b} ${w.n}`.toLowerCase().includes(q))) return false;
+    if(brState.brand && w.b !== brState.brand) return false;
+    if(brState.ma && w.ma !== brState.ma) return false;
+    if(brState.mv && w.mv !== brState.mv) return false;
+    if(brState.price){
+      const b = BRACKETS[brState.price];
+      if(!(w.p >= b.min && w.p <= b.max)) return false;
+    }
+    return true;
+  }).sort(BR_SORTS[brState.sort].fn);
+}
+
+function brOptions(values, selected, labeller){
+  return values.map(v =>
+    `<option value="${v}"${v === selected ? " selected" : ""}>${labeller ? labeller(v) : v}</option>`).join("");
+}
+
+function renderBrowse(){
+  const list  = brFilter();
+  const grid  = document.getElementById("brGrid");
+  const count = document.getElementById("brCount");
+  if(!grid) return;
+
+  count.textContent = list.length === WATCHES.length
+    ? `all ${WATCHES.length} watches`
+    : `${list.length} of ${WATCHES.length}`;
+
+  grid.innerHTML = list.length ? list.map(w => `
+    <li><button type="button" class="br-card" data-slug="${w.s}">
+      <span class="br-shot" data-file="images/watch-${w.s}.webp">
+        <img src="${IMG_DIR}watch-${w.s}.webp" alt="${(w.b + " " + w.n).replace(/"/g,"&quot;")}"
+             loading="lazy" decoding="async"
+             onerror="this.closest('.br-shot').classList.add('missing')" />
+      </span>
+      <span class="br-body">
+        <span class="k">${w.b}</span>
+        <b>${w.n}</b>
+        <span class="amt">${money(w.p)}</span>
+        <span class="sp">${w.sp[0]} · ${w.ma} · ${w.mv}</span>
+      </span>
+    </button></li>`).join("")
+    : `<li style="grid-column:1/-1"><div class="br-empty">
+         Nothing matches that combination. Clear a filter — or answer the
+         twelve questions instead and let the scoring find the nearest thing.
+       </div></li>`;
+
+  grid.querySelectorAll(".br-card").forEach(b => {
+    b.addEventListener("click", () => showDetail(b.dataset.slug));
+  });
+}
+
+function showBrowse(){
+  const brands = [...new Set(WATCHES.map(w => w.b))].sort();
+  const mats   = STEPS.find(s => s.id === "ma").options.filter(o => o.v !== "any");
+  const movs   = [...new Set(WATCHES.map(w => w.mv))].sort();
+
+  el.results.innerHTML = `
+    <div class="nav" style="margin:0 0 24px; padding:0; border:none">
+      <button class="btn" id="brBack" type="button">Answer the questions instead →</button>
+    </div>
+    <div class="br-head">
+      <span class="q-step num">The whole catalogue</span>
+      <h2>Every watch here, unfiltered</h2>
+      <p>The quiz is better at this than you are — it weighs twelve answers at
+         once and shows you the rung either side. But if you already know what
+         you're looking for, it's all here.</p>
+    </div>
+    <div class="br-controls">
+      <div class="br-field">
+        <label for="brQ">Search</label>
+        <input type="search" id="brQ" placeholder="brand or model" value="${brState.q}" />
+      </div>
+      <div class="br-field">
+        <label for="brBrand">Brand</label>
+        <select id="brBrand"><option value="">Any brand</option>${brOptions(brands, brState.brand)}</select>
+      </div>
+      <div class="br-field">
+        <label for="brPrice">Budget</label>
+        <select id="brPrice"><option value="">Any price</option>${
+          brOptions(Object.keys(BRACKETS), brState.price, k => BRACKETS[k].label)}</select>
+      </div>
+      <div class="br-field">
+        <label for="brMa">Case</label>
+        <select id="brMa"><option value="">Any material</option>${
+          mats.map(o => `<option value="${o.v}"${o.v === brState.ma ? " selected" : ""}>${o.label}</option>`).join("")}</select>
+      </div>
+      <div class="br-field">
+        <label for="brMv">Movement</label>
+        <select id="brMv"><option value="">Any movement</option>${brOptions(movs, brState.mv)}</select>
+      </div>
+      <div class="br-field">
+        <label for="brSort">Sort</label>
+        <select id="brSort">${
+          Object.entries(BR_SORTS).map(([k, v]) =>
+            `<option value="${k}"${k === brState.sort ? " selected" : ""}>${v.label}</option>`).join("")}</select>
+      </div>
+      <span class="br-count num" id="brCount"></span>
+    </div>
+    <ul class="br-grid" id="brGrid"></ul>`;
+
+  stopShots();
+  el.stage.classList.add("hidden");
+  el.results.classList.remove("hidden");
+
+  const bind = (id, key, ev) => document.getElementById(id)
+    .addEventListener(ev, e => { brState[key] = e.target.value; renderBrowse(); });
+  bind("brQ",     "q",     "input");
+  bind("brBrand", "brand", "change");
+  bind("brPrice", "price", "change");
+  bind("brMa",    "ma",    "change");
+  bind("brMv",    "mv",    "change");
+  bind("brSort",  "sort",  "change");
+
+  document.getElementById("brBack").addEventListener("click", () => {
+    history.replaceState(null, "", location.pathname);
+    el.results.classList.add("hidden");
+    el.stage.classList.remove("hidden");
+    renderStep();
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  renderBrowse();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+document.getElementById("browseBtn").addEventListener("click", () => {
+  history.replaceState(null, "", location.pathname + "#browse");
+  showBrowse();
+});
+
 /* ---------- theme ---------- */
 document.getElementById("themeBtn").addEventListener("click", () => {
   const cur = document.documentElement.getAttribute("data-theme");
@@ -1141,6 +1393,11 @@ function boot(){
   if(m && WATCHES.some(w => w.s === m[1])){
     renderStep();              // keep the quiz primed behind the detail view
     showDetail(m[1]);
+    return;
+  }
+  if(/[#&]browse\b/.test(location.hash || "")){
+    renderStep();              // same: the quiz stays primed behind browse
+    showBrowse();
     return;
   }
   renderStep();
