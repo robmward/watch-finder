@@ -202,6 +202,8 @@ const WATCHES = [
  sp:["38 mm","Domed plexiglass","Hand-wound"],w:"Bauhaus on the wrist. Max Bill designed the clocks in the mid-1950s and this wristwatch in 1961, and it has barely changed since — the heavily domed plexiglass distorts the dial at the edges, and that is entirely the point."},
 {s:"sinn-556",n:"556 I",b:"Sinn",p:1560,sz:"m",sh:"round",bz:"smooth",dc:"black",ly:"date",ix:"baton",st:["oyster","leather"],mv:"auto",vb:["one","tool"],bt:"indie",ma:"steel",
  sp:["38.5 mm","200 m","Sellita automatic"],w:"German instrument-watch logic applied to a plain black three-hander: anti-magnetic, two hundred metres, and visually almost anonymous. The quiet one-watch answer."},
+{s:"seiko-spb143",n:"Prospex SPB143",b:"Seiko",p:1200,sz:"l",sh:"round",bz:"dive",dc:"black",ly:"date",ix:"baton",st:["oyster"],mv:"auto",vb:["tool","one"],bt:"value",ma:"steel",
+ sp:["40.5 mm","200 m","Seiko 6R35 automatic · 70 h"],w:"A modern reworking of the 62MAS, Seiko's first diver from 1965, with the original's compact cushion-less case and box-shaped crystal. The 6R35 inside runs seventy hours but is regulated to a looser standard than the price suggests — you buy this one for the case and the proportions."},
 {s:"tissot-prx-chrono",n:"PRX Chronograph",b:"Tissot",p:1995,sz:"l",sh:"integrated",bz:"smooth",dc:"blue",ly:"chrono",ix:"baton",st:["integrated"],mv:"auto",vb:["statement","one"],bt:"house",ma:"steel",
  sp:["42 mm","100 m","Valjoux A05 automatic"],w:"The PRX with a proper automatic chronograph inside and three registers across a dark sunburst dial. Busier and considerably more expensive than its three-hand sibling, and the only integrated-bracelet chronograph most people will seriously consider."},
 
@@ -271,6 +273,12 @@ const CREDITS = [
   "author": "ajay_suresh",
   "license": "CC BY 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Rolex_Datejust_126234.jpg"
+ },
+ {
+  "title": "Seiko Prospex SPB143J1.png (cropped to the watch)",
+  "author": "Deerpeter",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seiko_Prospex_SPB143J1.png"
  },
  {
   "title": "Rolex GMT Master II 116710BLNR Batman.jpg",
