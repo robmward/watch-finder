@@ -1013,7 +1013,18 @@ function finish(){
     </div>`;
   }
 
-  const runners = inBand.slice(1, 6);
+  /* Dead heats are information, not a problem to break.
+     Two watches can be identical on all twelve answers and 4x apart on price
+     — the Orient Mako and the Seiko SPB143 are exactly that. Picking the
+     cheaper one for the user and hiding the rest would be the engine making
+     a budget decision that is the user's to make, so show the whole tie,
+     cheapest first, and let money be the tiebreaker it actually is. */
+  const tied    = inBand.filter(r => r.pts === main.pts).sort((x,y) => x.w.p - y.w.p);
+  const tiedSet = new Set(tied.map(r => r.w.s));
+  const isTie   = tied.length > 1;
+
+  // Runners-up exclude the tie group, which is already shown in full above.
+  const runners = inBand.filter(r => !tiedSet.has(r.w.s)).slice(0, 5);
 
   el.results.innerHTML = `
     <div class="result-head">
@@ -1026,6 +1037,22 @@ function finish(){
     </div>
 
     ${plate(main)}
+
+    ${isTie ? `
+    <div class="ladder-head">
+      <h2>${tied.length === 2 ? "Two watches" : tied.length + " watches"} answer your spec identically</h2>
+      <p>Nothing you told us separates these — only money does. Cheapest first.</p>
+    </div>
+    <ul class="runners">
+      ${tied.map((r,i) => `<li>
+        <button type="button" class="runner-go" data-slug="${r.w.s}">
+          <span class="rank">${pad(i+1)}</span>
+          <img class="runner-thumb" src="${IMG_DIR}watch-${r.w.s}.webp" alt="" loading="lazy" decoding="async" />
+          <span class="who"><b>${r.w.b} ${r.w.n}</b><span>${r.w.sp.join(" · ")}</span></span>
+          <span class="amt">${money(r.w.p)}</span>
+        </button>
+      </li>`).join("")}
+    </ul>` : ""}
 
     <div class="ladder-head">
       <h2>The rung below and the rung above</h2>
@@ -1044,7 +1071,7 @@ function finish(){
     <ul class="runners">
       ${runners.map((r,i) => `<li>
         <button type="button" class="runner-go" data-slug="${r.w.s}">
-          <span class="rank">${pad(i+2)}</span>
+          <span class="rank">${pad(i + 1 + tied.length)}</span>
           <img class="runner-thumb" src="${IMG_DIR}watch-${r.w.s}.webp" alt="" loading="lazy" decoding="async" />
           <span class="who"><b>${r.w.b} ${r.w.n}</b><span>${r.w.sp.join(" · ")}</span></span>
           <span class="amt">${money(r.w.p)}</span>
