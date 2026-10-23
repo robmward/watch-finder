@@ -166,6 +166,8 @@ const BRACKETS = {
 const WATCHES = [
 
 /* ---------- under $250 ---------- */
+{s:"casio-databank",n:"Databank DBC-810",b:"Casio",p:60,sz:"m",sh:"rect",bz:"none",dc:"black",ly:"digital",ix:"baton",st:["integrated"],mv:"digital",vb:["tool","statement"],bt:"value",ma:"steel",
+ sp:["36 × 40 mm","Eight-digit calculator","Digital · telememo"],w:"A working calculator strapped to a wristwatch, with a keypad you operate using a fingernail and a 25-entry phone book nobody has needed since 2003. Absurd, genuinely useful for about four minutes a year, and the reason an entire aesthetic exists."},
 {s:"casio-f91w",n:"F-91W",b:"Casio",p:25,sz:"s",sh:"rect",bz:"none",dc:"black",ly:"digital",ix:"baton",st:["rubber"],mv:"digital",vb:["statement","tool"],bt:"value",ma:"resin",
  sp:["38 × 35 mm","Splash resistant (unrated)","Digital · 7-year cell"],w:"A plastic rectangle that costs less than lunch and has been worn by schoolchildren and soldiers alike. An alarm, a stopwatch, a seven-year battery, and absolutely nothing to worry about losing."},
 {s:"casio-gshock-5610",n:"G-Shock GW-M5610U",b:"Casio",p:150,sz:"l",sh:"cushion",bz:"none",dc:"black",ly:"digital",ix:"baton",st:["rubber"],mv:"digital",vb:["tool"],bt:"value",ma:"resin",
@@ -178,6 +180,8 @@ const WATCHES = [
  sp:["38 mm","Rotating 12-hour bezel","Quartz · day-date"],w:"A 1979 reissue with a blue dial and a red-and-blue rotating bezel on a textured rubber strap. Worth knowing the bezel is a 12-hour scale, not the 24-hour GMT ring the colours suggest — it looks like a travel watch without being one."},
 
 /* ---------- $250 – $750 ---------- */
+{s:"seiko-skx007",n:"SKX007",b:"Seiko",p:300,sz:"l",sh:"round",bz:"dive",dc:"black",ly:"date",ix:"dots",st:["rubber","oyster","nato"],mv:"auto",vb:["tool","one"],bt:"value",ma:"steel",
+ sp:["42 mm","200 m ISO","Seiko 7S26 automatic"],w:"The dive watch that taught a generation what a dive watch is, discontinued in 2019 and still the default answer to the question. The movement neither hacks nor hand-winds and the bezel has play in it; none of that has ever mattered to anyone who owns one."},
 {s:"orient-kamasu",n:"Mako",b:"Orient",p:260,sz:"l",sh:"round",bz:"dive",dc:"black",ly:"date",ix:"baton",st:["oyster"],mv:"auto",vb:["tool","one"],bt:"value",ma:"steel",
  sp:["41.5 mm","200 m","Orient automatic"],w:"Two hundred metres, a hacking automatic and a steel bracelet for the price of a decent pair of boots. The mineral crystal is the one real compromise, and it is the reason the rest of the watch can cost this little."},
 {s:"citizen-promaster",n:"Promaster Diver",b:"Citizen",p:325,sz:"xl",sh:"round",bz:"dive",dc:"black",ly:"date",ix:"dots",st:["nato","rubber"],mv:"solar",vb:["tool"],bt:"house",ma:"steel",
@@ -196,6 +200,8 @@ const WATCHES = [
  sp:["38 mm","100 m","H-10 automatic · 80 h"],w:"The hand-wound Khaki's automatic sibling, with a date, a knurled coin-edge bezel and the same eighty-hour movement. If you want one mechanical watch to beat up and never think about, this is the shortlist."},
 
 /* ---------- $750 – $2,000 ---------- */
+{s:"longines-hydroconquest",n:"HydroConquest",b:"Longines",p:1400,sz:"l",sh:"round",bz:"dive",dc:"blue",ly:"date",ix:"arabic",st:["oyster","rubber"],mv:"auto",vb:["tool","one"],bt:"house",ma:"steel",
+ sp:["41 mm","300 m","Longines L888 automatic"],w:"A sunburst blue diver with a ceramic bezel and a Swiss automatic, sitting at the price where Swiss diving watches stop being aspirational and start being ordinary. Nothing here is inventive, and everything is correct."},
 {s:"seiko-alpinist",n:"Alpinist Perpetual Calendar",b:"Seiko",p:600,sz:"m",sh:"round",bz:"smooth",dc:"green",ly:"date",ix:"baton",st:["oyster","leather"],mv:"quartz",vb:["one"],bt:"house",ma:"titanium",
  sp:["38 mm titanium","Quartz perpetual calendar","Inner compass ring"],w:"A dark olive dial under an inner compass ring turned by a second crown. This is the titanium quartz version with a perpetual calendar — less romantic than the automatic Alpinist, and considerably better at telling the time."},
 {s:"junghans-max-bill",n:"Max Bill Hand-Wound",b:"Junghans",p:1190,sz:"m",sh:"round",bz:"none",dc:"white",ly:"plain",ix:"arabic",st:["leather"],mv:"hand",vb:["dress","statement"],bt:"house",ma:"steel",
@@ -208,6 +214,10 @@ const WATCHES = [
  sp:["42 mm","100 m","Valjoux A05 automatic"],w:"The PRX with a proper automatic chronograph inside and three registers across a dark sunburst dial. Busier and considerably more expensive than its three-hand sibling, and the only integrated-bracelet chronograph most people will seriously consider."},
 
 /* ---------- $2,000 – $6,000 ---------- */
+{s:"tag-monaco",n:"Monaco CW2118",b:"TAG Heuer",p:4000,sz:"l",sh:"rect",bz:"none",dc:"white",ly:"chrono",ix:"baton",st:["leather"],mv:"auto",vb:["statement"],bt:"house",ma:"steel",
+ sp:["38 × 38 mm","Square case","Automatic chronograph"],w:"A square chronograph from 1969 that was built to show off a new automatic movement and ended up on Steve McQueen in Le Mans instead. The case is genuinely square, which nothing else on this list is, and it wears far larger than its measurements suggest."},
+{s:"breitling-superocean",n:"Superocean II 36",b:"Breitling",p:3500,sz:"s",sh:"round",bz:"dive",dc:"black",ly:"date",ix:"arabic",st:["leather","rubber","oyster"],mv:"auto",vb:["tool","dress"],bt:"house",ma:"steel",
+ sp:["36 mm","200 m","Breitling 17 automatic"],w:"A full dive watch shrunk to thirty-six millimetres, with oversized arabic numerals that keep it legible at a size most brands reserve for dress watches. The rare tool watch that fits under a shirt cuff."},
 {s:"oris-aquis",n:"Aquis Depth Gauge",b:"Oris",p:4000,sz:"l",sh:"round",bz:"dive",dc:"black",ly:"date",ix:"baton",st:["rubber","oyster"],mv:"auto",vb:["tool","one"],bt:"house",ma:"steel",
  sp:["45.8 mm","500 m","Depth gauge channel"],w:"A dive watch with an actual mechanical depth gauge: a channel cut around the dial edge floods with water, and you read the depth where the water meets the yellow scale. No electronics, no battery, genuinely clever."},
 {s:"nomos-tangente",n:"Tangente neomatik 41 Update",b:"Nomos",p:4280,sz:"l",sh:"round",bz:"none",dc:"white",ly:"date",ix:"arabic",st:["leather"],mv:"auto",vb:["dress","statement"],bt:"indie",ma:"steel",
@@ -224,6 +234,10 @@ const WATCHES = [
  sp:["39 mm","100 m","Calibre 5 automatic"],w:"Jack Heuer's 1963 racing design in a clean three-hand case. More wearable, and considerably less shouty, than the chronographs that share its name."},
 
 /* ---------- $6,000 and up ---------- */
+{s:"zenith-el-primero",n:"El Primero 36000 VpH",b:"Zenith",p:8000,sz:"l",sh:"round",bz:"tachy",dc:"blue",ly:"chrono",ix:"baton",st:["leather"],mv:"auto",vb:["statement","dress"],bt:"house",ma:"steel",
+ sp:["42 mm","Tachymeter scale","El Primero · 36,000 vph"],w:"The first automatic chronograph movement, beating ten times a second so the sweep hand measures a tenth. A watchmaker hid the tooling in an attic through the quartz crisis rather than scrap it, which is why the calibre still exists at all."},
+{s:"seiko-astron-1969",n:"Quartz-Astron 35SQ",b:"Seiko",p:12000,sz:"m",sh:"cushion",bz:"none",dc:"warm",ly:"plain",ix:"baton",st:["leather"],mv:"quartz",vb:["statement","dress"],bt:"house",ma:"gold",
+ sp:["36.5 mm 18k gold","First quartz wristwatch","Seiko 35A · 1969"],w:"The first quartz wristwatch ever sold, released on Christmas Day 1969 in a gold case for the price of a car. It made every mechanical watch on this list obsolete overnight, and then the industry spent fifty years deciding that obsolete was not the same as unwanted."},
 {s:"breitling-premier",n:"Premier (1950s)",b:"Breitling",p:6500,sz:"s",sh:"round",bz:"none",dc:"warm",ly:"chrono",ix:"baton",st:["leather"],mv:"hand",vb:["dress","statement"],bt:"house",ma:"gold",
  sp:["~36 mm gold","Three registers","Hand-wound chronograph"],w:"A 1950s hand-wound chronograph with a champagne dial gone warmer still with age, blued hands and a tachymeter printed right on the dial. Vintage, so condition decides the price far more than the reference does."},
 {s:"omega-aqua-terra",n:"Seamaster Aqua Terra",b:"Omega",p:6800,sz:"l",sh:"round",bz:"smooth",dc:"blue",ly:"date",ix:"baton",st:["rubber","oyster","leather"],mv:"auto",vb:["one","dress"],bt:"house",ma:"steel",
@@ -273,6 +287,48 @@ const CREDITS = [
   "author": "ajay_suresh",
   "license": "CC BY 2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Rolex_Datejust_126234.jpg"
+ },
+ {
+  "title": "Seiko SKX007.jpg",
+  "author": "Ashley Pomeroy",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seiko_SKX007.jpg"
+ },
+ {
+  "title": "Steve McQueen Monaco White face CW2118.jpg",
+  "author": "DavidBSV12",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Steve_McQueen_Monaco_White_face_CW2118.jpg"
+ },
+ {
+  "title": "Zenith El Primero 36000 VpH Tribute to Charles Vermot 04 (turned).jpg",
+  "author": "Zenith",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Zenith_El_Primero_36000_VpH_Tribute_to_Charles_Vermot_04_(turned).jpg"
+ },
+ {
+  "title": "Longines HydroConquest Automatic Blue.jpg",
+  "author": "I khushi",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Longines_HydroConquest_Automatic_Blue.jpg"
+ },
+ {
+  "title": "DBC-810 (2).jpg",
+  "author": "U1Quattro",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:DBC-810_(2).jpg"
+ },
+ {
+  "title": "Breitling Superocean II 36 - 2017.jpg",
+  "author": "Deansfa",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Breitling_Superocean_II_36_-_2017.jpg"
+ },
+ {
+  "title": "Seiko Astron.jpg",
+  "author": "Deutsches-uhrenmuseum",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Seiko_Astron.jpg"
  },
  {
   "title": "Seiko Prospex SPB143J1.png (cropped to the watch)",

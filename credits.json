@@ -85,12 +85,12 @@
   },
   "watch-oris-aquis.webp": {
     "title": "Oris Aquis Depth Gauge.jpeg",
-    "author": "Rechteinhaber: Oris\n\nFotograf: Olaf Köster",
+    "author": "Rechteinhaber: Oris\n\nFotograf: Olaf K\u00f6ster",
     "license": "CC BY-SA 3.0 de",
     "page": "https://commons.wikimedia.org/wiki/File:Oris_Aquis_Depth_Gauge.jpeg"
   },
   "watch-nomos-tangente.webp": {
-    "title": "Nomos Glashütte Tangente neomatik 41 Update.jpg",
+    "title": "Nomos Glash\u00fctte Tangente neomatik 41 Update.jpg",
     "author": "Berlinerblau",
     "license": "CC BY-SA 4.0",
     "page": "https://commons.wikimedia.org/wiki/File:Nomos_Glash%C3%BCtte_Tangente_neomatik_41_Update.jpg"
@@ -240,14 +240,14 @@
     "page": "https://commons.wikimedia.org/wiki/File:SINN_(30468374062).jpg"
   },
   "dial-white-0.webp": {
-    "title": "Nomos Glashütte Tangente neomatik 41 Update.jpg",
+    "title": "Nomos Glash\u00fctte Tangente neomatik 41 Update.jpg",
     "author": "Berlinerblau",
     "license": "CC BY-SA 4.0",
     "page": "https://commons.wikimedia.org/wiki/File:Nomos_Glash%C3%BCtte_Tangente_neomatik_41_Update.jpg"
   },
   "dial-warm-0.webp": {
     "title": "Breitling Premier 1950th.png",
-    "author": "Ｔｏｍ",
+    "author": "\uff34\uff4f\uff4d",
     "license": "FAL",
     "page": "https://commons.wikimedia.org/wiki/File:Breitling_Premier_1950th.png"
   },
@@ -277,7 +277,7 @@
   },
   "strap-leather-0.webp": {
     "title": "Viscount Alligator blau.jpg",
-    "author": "Hirsch Armbänder GmbH",
+    "author": "Hirsch Armb\u00e4nder GmbH",
     "license": "CC BY-SA 3.0",
     "page": "https://commons.wikimedia.org/wiki/File:Viscount_Alligator_blau.jpg"
   },
@@ -468,7 +468,7 @@
     "page": "https://commons.wikimedia.org/wiki/File:Rolex-Submariner.jpg"
   },
   "markers-arabic-0.webp": {
-    "title": "Nomos Glashütte Tangente neomatik 41 Update.jpg",
+    "title": "Nomos Glash\u00fctte Tangente neomatik 41 Update.jpg",
     "author": "Berlinerblau",
     "license": "CC BY-SA 4.0",
     "page": "https://commons.wikimedia.org/wiki/File:Nomos_Glash%C3%BCtte_Tangente_neomatik_41_Update.jpg"
@@ -487,7 +487,7 @@
   },
   "watch-breitling-premier.webp": {
     "title": "Breitling Premier 1950th.png",
-    "author": "Ｔｏｍ",
+    "author": "\uff34\uff4f\uff4d",
     "license": "FAL",
     "page": "https://commons.wikimedia.org/wiki/File:Breitling_Premier_1950th.png"
   },
@@ -520,5 +520,47 @@
     "author": "Deerpeter",
     "license": "CC BY-SA 4.0",
     "page": "https://commons.wikimedia.org/wiki/File:Seiko_Prospex_SPB143J1.png"
+  },
+  "watch-seiko-skx007.webp": {
+    "title": "Seiko SKX007.jpg",
+    "author": "Ashley Pomeroy",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Seiko_SKX007.jpg"
+  },
+  "watch-tag-monaco.webp": {
+    "title": "Steve McQueen Monaco White face CW2118.jpg",
+    "author": "DavidBSV12",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Steve_McQueen_Monaco_White_face_CW2118.jpg"
+  },
+  "watch-zenith-el-primero.webp": {
+    "title": "Zenith El Primero 36000 VpH Tribute to Charles Vermot 04 (turned).jpg",
+    "author": "Zenith",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Zenith_El_Primero_36000_VpH_Tribute_to_Charles_Vermot_04_(turned).jpg"
+  },
+  "watch-longines-hydroconquest.webp": {
+    "title": "Longines HydroConquest Automatic Blue.jpg",
+    "author": "I khushi",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Longines_HydroConquest_Automatic_Blue.jpg"
+  },
+  "watch-casio-databank.webp": {
+    "title": "DBC-810 (2).jpg",
+    "author": "U1Quattro",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:DBC-810_(2).jpg"
+  },
+  "watch-breitling-superocean.webp": {
+    "title": "Breitling Superocean II 36 - 2017.jpg",
+    "author": "Deansfa",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Breitling_Superocean_II_36_-_2017.jpg"
+  },
+  "watch-seiko-astron-1969.webp": {
+    "title": "Seiko Astron.jpg",
+    "author": "Deutsches-uhrenmuseum",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Seiko_Astron.jpg"
   }
 }
